@@ -4,27 +4,33 @@
 
 {% block content %}
 <div class="contact-page">
-    <h2>Contact Me</h2>
-    <p>If you have any questions or inquiries, feel free to reach out to me. I look forward to connecting with you!</p>
-    
+    <div class="contact-header">
+        <h2>Contact Me</h2>
+        <p>If you have any questions or inquiries, feel free to reach out to me. I look forward to connecting with you!</p>
+    </div>
+
+    <!-- Contact Information Section -->
     <div class="contact-info">
         <h3>Contact Information:</h3>
         <p><strong>Phone:</strong> <a href="tel:+17046152524">704-615-2524</a></p>
         <p><strong>Email:</strong> <a href="mailto:kylehampton949@gmail.com">kylehampton949@gmail.com</a></p>
     </div>
 
-    <!-- Contact Form -->
-    <form action="/contact" method="POST">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required>
+    <!-- Contact Form Section -->
+    <div class="contact-form">
+        <h3>Send a Message</h3>
+        <form action="/contact" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
 
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" required>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
 
-        <label for="message">Your Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
 
-        <button type="submit">Send Message</button>
-    </form>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
 </div>
 {% endblock %}

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}About Me - Kyle Hampton{% endblock %}
+
+{% block content %}
+<section class="about-page">
+    <!-- Hero Section -->
+    <div class="hero-about">
+        <h1>Welcome to My Journey</h1>
+        <p>
+            Passionate about solving problems, creating impactful tools, and exploring the endless possibilities of technology.
+        </p>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="about-grid">
+        <!-- Left Column: About Content -->
+        <div class="about-left">
+            <h2>Who Am I?</h2>
+            <p>
+                Hi, I’m Kyle Hampton—a passionate tech enthusiast, problem solver, and innovator. 
+                I thrive on turning complex challenges into creative, actionable solutions through data analysis and technology.
+            </p>
+            
+            <h3>Core Skills</h3>
+            <ul class="skills-list">
+                <li><span class="skill-icon">🐍</span><strong>Python: </strong> Creating tools and automating workflows.</li>
+                <li><span class="skill-icon">📊</span><strong>Data Analysis:</strong> Transforming raw data into actionable insights.</li>
+                <li><span class="skill-icon">🌐</span><strong>Web Development:</strong> Building responsive, user-focused applications.</li>
+            </ul>
+
+            <h3>My Values</h3>
+            <p>
+                I believe in lifelong learning and the power of technology to create meaningful change. 
+                My goal is to develop innovative tools that improve lives and empower people to make informed decisions.
+            </p>
+
+            <h3>Did You Know?</h3>
+            <ul class="fun-facts">
+                <li>🌍 Love to travel, passionate about learning languages.</li>
+                <li>🚀 Completed 10+ projects in 3 years.</li>
+                <li>✨ Dreaming of a tech career that blends innovation and impact.</li>
+            </ul>
+        </div>
+
+        <!-- Right Column: Timeline -->
+        <div class="timeline">
+            <h2>My Journey</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="marker"></div>
+                    <div class="content">
+                        <h3>2023 - Raytheon Technologies</h3>
+                        <p>
+                            Spearheaded a solo project focused on designing solar panel sidewalks, contributing to 
+                            sustainable energy solutions while enhancing technical and project management skills.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="marker"></div>
+                    <div class="content">
+                        <h3>2024 - CMPD Internship</h3>
+                        <p>
+                            Organized the National Night Out event, revamped data capturing processes, and 
+                            collaborated with the community services division to strengthen public engagement.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="marker"></div>
+                    <div class="content">
+                        <h3>2025 - Cash Compass</h3>
+                        <p>
+                            Launched a financial literacy platform, empowering users with tools to manage budgets, 
+                            track expenses, and achieve financial goals.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="marker"></div>
+                    <div class="content">
+                        <h3>Ongoing</h3>
+                        <p>
+                            Continuing to refine my skills in data science, web development, and innovative problem-solving 
+                            while working on projects that create meaningful impact.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call-to-Action Section -->
+    <div class="cta-bottom">
+        <p>Want to see the work that drives me?</p>
+        <a href="/projects" class="cta-button">Explore My Projects</a>
+    </div>
+</section>
+
+
+{% endblock %}

@@ -41,22 +41,12 @@
         </div>
     </footer>
 </body>
-<header>
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <a href="/">Kyle Hampton</a>
-        </div>
-        <button class="navbar-toggler" type="button" onclick="toggleNavbar()">
-            &#9776; <!-- Hamburger icon -->
-        </button>
-        <ul class="navbar-menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/resume">Resume</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+<script>
+    function toggleNavbar() {
+        const navbarMenu = document.querySelector('.navbar-menu');
+        navbarMenu.classList.toggle('show'); // Toggle the 'show' class to display/hide the menu
+    }
+</script>
+
 
 </html>

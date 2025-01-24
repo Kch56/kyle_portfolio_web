@@ -9,7 +9,7 @@ app.config['MAIL_PORT'] = 465  # For Gmail SSL
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 app.config['MAIL_USERNAME'] = 'kylehampton949@gmail.com'  # Your email address
-app.config['MAIL_PASSWORD'] = 'blue1943'  # Your email password
+app.config['MAIL_PASSWORD'] = 'eqme fbeu azpl sebc'  # Your email password
 app.config['MAIL_DEFAULT_SENDER'] = 'kylehampton949@gmail.com@gmail.com'
 
 mail = Mail(app)

@@ -901,7 +901,7 @@ html, body {
 
 .contact-header p {
     font-size: 8rem; /* Larger font size for description */
-    line-height: 1.8;
+    line-height: 2;
     margin: 0 auto;
     max-width: 800px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added shadow */

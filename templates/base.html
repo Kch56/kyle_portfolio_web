@@ -15,6 +15,9 @@
             <div class="navbar-brand">
                 <a href="/">Kyle Hampton</a>
             </div>
+            <button class="navbar-toggler" type="button" onclick="toggleNavbar()">
+                &#9776; <!-- Hamburger icon -->
+            </button>
             <ul class="navbar-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
@@ -24,7 +27,7 @@
             </ul>
         </nav>
     </header>
-    <main class="content">
+    <ma=in class="content">
         {% block content %}{% endblock %}
     </main>
     <footer>
@@ -38,4 +41,22 @@
         </div>
     </footer>
 </body>
+<header>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="/">Kyle Hampton</a>
+        </div>
+        <button class="navbar-toggler" type="button" onclick="toggleNavbar()">
+            &#9776; <!-- Hamburger icon -->
+        </button>
+        <ul class="navbar-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/resume">Resume</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
 </html>

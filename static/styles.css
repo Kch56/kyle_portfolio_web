@@ -210,7 +210,7 @@ h1, h2, h3 {
 
 
 
-/* Navigation Bar */
+/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -221,13 +221,6 @@ h1, h2, h3 {
     background: rgba(255, 255, 255, 0.9);
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-.navbar-brand {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #4285f4;
 }
 
 .navbar-menu {
@@ -246,20 +239,38 @@ h1, h2, h3 {
     font-size: 1rem;
     color: #333;
     font-weight: 500;
-    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.navbar-menu a:hover {
-    color: #4285f4;
-    transform: scale(1.05);
+.navbar-toggler {
+    display: none; /* Hide the hamburger by default */
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #333;
 }
 
-/* Active Link Style */
-.navbar-menu .active {
-    color: #4285f4;
-    font-weight: bold;
-    text-decoration: underline;
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* Hide the menu items by default */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Position the menu below the navbar */
+        left: 0;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-menu.show {
+        display: flex; /* Show the menu items when toggled */
+    }
+
+    .navbar-toggler {
+        display: block; /* Show the hamburger icon on small screens */
+    }
 }
+
 
 
 

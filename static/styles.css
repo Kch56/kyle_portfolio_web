@@ -869,8 +869,6 @@ html, body {
 
 
 
-
-
 /* Contact Page Background and Layout */
 .contact-page {
     padding: 40px 20px;
@@ -893,15 +891,15 @@ html, body {
 }
 
 .contact-header h2 {
-    font-size: 1rem; /* Larger font size */
+    font-size: 2.5rem; /* Adjust the size for header */
     color: #ffd700;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added shadow */
 }
 
 .contact-header p {
-    font-size: 8rem; /* Larger font size for description */
-    line-height: 2;
+    font-size: 1.5rem; /* Reduce the size for description */
+    line-height: 1.8;
     margin: 0 auto;
     max-width: 800px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added shadow */
@@ -942,18 +940,18 @@ html, body {
 
 /* Contact Form Section */
 .contact-form {
-    text-align: center;
+    text-align: left; /* Align labels and inputs to the left */
     margin-top: 40px;
     background: rgba(0, 0, 0, 0.5);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 600px; /* Limit width */
+    max-width: 600px; /* Adjust form width */
 }
 
 .contact-form h3 {
-    font-size: 2.5rem; /* Larger font size */
+    font-size: 2rem; /* Adjust the size for form title */
     color: #ffd700;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added shadow */
@@ -961,7 +959,7 @@ html, body {
 
 .contact-form label {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: white;
     margin-top: 15px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added shadow */
@@ -971,12 +969,18 @@ html, body {
 .contact-form textarea {
     width: 100%;
     padding: 12px;
-    font-size: 1.2rem; /* Slightly larger font */
+    font-size: 1rem; /* Adjust font size for input fields */
     margin-top: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #fff;
     color: #333;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #4285f4; /* Highlight with blue on focus */
+    outline: none;
 }
 
 .contact-form button {
@@ -1026,7 +1030,7 @@ html, body {
     }
 
     .contact-header h2 {
-        font-size: 2.5rem; /* Adjust for smaller screens */
+        font-size: 2rem; /* Adjust for smaller screens */
     }
 
     .contact-header p {

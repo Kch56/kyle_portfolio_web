@@ -1,0 +1,478 @@
+{% extends 'base.html' %}
+
+{% block title %}Current & Recent Projects - Kyle Hampton{% endblock %}
+
+{% block content %}
+<section class="projects-page">
+
+  <div class="projects-header">
+    <h1>Current & Recent Projects</h1>
+    <p>
+      These are the projects I’m actively building and refining—focused on public safety analytics,
+      response modeling, and turning operational data into decision tools.
+    </p>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- 1) RESPONSE MODEL -->
+    <div class="project-card">
+      <h2>CFD Response Model (Hex-Based “Digital Twin”)</h2>
+      <p>
+        A response coverage model built from historical travel performance and discretized into a hex grid
+        to visualize operational reach, redundancy, and realistic response footprints.
+      </p>
+
+      <p><strong>Front View Highlights:</strong></p>
+      <ul>
+        <li>Hex-based spatial structure for consistent adjacency and citywide modeling</li>
+        <li>Weighted network graph (observed travel time drives edge weights)</li>
+        <li>Filtering + outlier controls to preserve emergency-response “ground truth”</li>
+        <li>4/6/8-minute reachable footprints generated through shortest-path routing</li>
+      </ul>
+
+      <p><strong>Technologies:</strong> Python, GIS, H3, Graphs, Routing, Data Cleaning</p>
+
+      <button class="project-button" type="button" onclick="openModal('modal-response')">View More</button>
+    </div>
+
+    <!-- 2) RISK INFORMED DISPATCH -->
+    <div class="project-card">
+      <h2>Risk-Informed Dispatch (RFD) System Design</h2>
+      <p>
+        A dispatch framework that adds place-based risk to incident type + proximity so higher-risk locations
+        can trigger stronger initial response packages when appropriate.
+      </p>
+
+      <p><strong>Front View Highlights:</strong></p>
+      <ul>
+        <li>Builds an address/parcel risk tier system (Tier 1–4)</li>
+        <li>Risk factors include structure, occupancy exposure, hazards, and access constraints</li>
+        <li>Designed for CAD integration through an address → risk lookup</li>
+        <li>Guardrails prevent over-dispatch (caps, selective applicability, override support)</li>
+      </ul>
+
+      <p><strong>Technologies:</strong> GIS, Data Architecture, Policy/Operations Design, CAD Integration Planning</p>
+
+      <button class="project-button" type="button" onclick="openModal('modal-risk')">View More</button>
+    </div>
+
+    <!-- 3) GRANT FINDER -->
+    <div class="project-card">
+      <h2>CFD Grant Finder (Prototype)</h2>
+      <p>
+        A tool to help teams find relevant grants faster with search + filters + quick summaries—designed to reduce
+        time spent jumping across portals and PDFs.
+      </p>
+
+      <p><strong>Front View Highlights:</strong></p>
+      <ul>
+        <li>Searchable grant list with filters (category, deadline, eligibility, keywords)</li>
+        <li>Summaries for rapid review and comparison</li>
+        <li>Designed to support API sources + internal historical grant references</li>
+        <li>Roadmap includes saved folders and department-specific shortlists</li>
+      </ul>
+
+      <p><strong>Technologies:</strong> Flask, Python, Data Structuring, UI/UX</p>
+
+      <button class="project-button" type="button" onclick="openModal('modal-grants')">View More</button>
+    </div>
+
+    <!-- 4) MAPBOOK AUTOMATION -->
+    <div class="project-card">
+      <h2>Mapbook Automation (Planning Outputs)</h2>
+      <p>
+        A workflow for generating consistent map/report outputs for planning—reducing manual map editing
+        and making deliverables repeatable as data updates.
+      </p>
+
+      <p><strong>Front View Highlights:</strong></p>
+      <ul>
+        <li>Standardized layer packages + export settings for repeatable outputs</li>
+        <li>Batch export concepts with consistent naming and folder structure</li>
+        <li>Supports page layout standards (legend, scale, title, disclaimers)</li>
+        <li>Goal: faster turnaround and fewer formatting errors</li>
+      </ul>
+
+      <p><strong>Technologies:</strong> Python, GIS Workflows, Automation, Documentation</p>
+
+      <button class="project-button" type="button" onclick="openModal('modal-mapbook')">View More</button>
+    </div>
+
+    <!-- 5) AI REQUEST ROUTING -->
+    <div class="project-card">
+      <h2>AI-Supported Internal Request & Routing System</h2>
+      <p><em>Charlotte Fire Department – In Development</em></p>
+
+      <p>
+        Designing an AI-supported internal request system that guides department members to the correct process,
+        form, or division without relying on multiple emails or manual routing.
+      </p>
+
+      <p><strong>Front View Highlights:</strong></p>
+      <ul>
+        <li>Automates routing to the correct destination (Logistics, Planning, GIS, etc.)</li>
+        <li>Reduces delays and unnecessary email traffic</li>
+        <li>Provides instant guidance for common operational questions</li>
+        <li>Standardizes request workflows for consistency across divisions</li>
+      </ul>
+
+      <p><strong>Technologies:</strong> Workflow Design, AI Support Concepts, Knowledge Routing, UI/UX</p>
+
+      <button class="project-button" type="button" onclick="openModal('modal-ai-routing')">View More</button>
+    </div>
+
+    <!-- 6) DEPARTMENT MOBILE APP -->
+    <div class="project-card">
+      <h2>CFD Department Mobile App Concept</h2>
+      <p><em>Centralized Internal Resource Platform – Concept & Planning</em></p>
+
+      <p>
+        A “one place for everything” mobile concept—guidance, requests, references, and internal resources—designed
+        for quick access from the field and aligned with the AI-supported request system.
+      </p>
+
+      <p><strong>Front View Highlights:</strong></p>
+      <ul>
+        <li>Mobile-first access to internal guidance, workflows, and key references</li>
+        <li>Centralizes requests and support into one consistent entry point</li>
+        <li>Designed to pair with AI routing for fast answers and correct submission paths</li>
+        <li>Improves operational consistency across stations and divisions</li>
+      </ul>
+
+      <p><strong>Technologies:</strong> Product Design, Mobile UX, Internal Tools Planning</p>
+
+      <button class="project-button" type="button" onclick="openModal('modal-mobile-app')">View More</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     MODALS (white/light, longer content, same page)
+============================================================ -->
+
+<!-- RESPONSE MODAL -->
+<div id="modal-response" class="kh-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="kh-modal">
+    <div class="kh-modal-header">
+      <h2>CFD Response Model (Hex-Based “Digital Twin”)</h2>
+      <button class="kh-modal-close" type="button" onclick="closeModal('modal-response')" aria-label="Close">✕</button>
+    </div>
+
+    <div class="kh-modal-body">
+      <p>
+        This project is built to answer one question clearly: <strong>“What areas can CFD actually reach within a given time window?”</strong>
+        Instead of using theoretical routing assumptions, the model is grounded in historical response travel performance so the outputs are
+        defensible for planning and strategy.
+      </p>
+
+      <h3>Problem</h3>
+      <p>
+        Standard travel-time tools often reflect civilian driving assumptions and don’t always capture emergency response realities.
+        Planning needs a repeatable, data-driven coverage model that reflects operational truth.
+      </p>
+
+      <h3>Data captured</h3>
+      <ul>
+        <li><strong>Historical incident + unit response records:</strong> call timestamps and travel segments, unit identity, station context.</li>
+        <li><strong>Geospatial anchors:</strong> incident locations tied to spatial indexing for aggregation and repeatability.</li>
+        <li><strong>Quality controls:</strong> filtering to preserve emergency-response “ground truth.”</li>
+      </ul>
+
+      <h3>Methodology</h3>
+      <ol>
+        <li><strong>Hex discretization:</strong> divide the city into uniform hexes.</li>
+        <li><strong>Travel-time weighting:</strong> edges weighted from observed travel performance.</li>
+        <li><strong>Shortest-path routing:</strong> generate reachable zones for 4/6/8 minutes.</li>
+        <li><strong>Footprint generation:</strong> visualize blooms, overlap, and gaps.</li>
+      </ol>
+
+      <h3>Outputs</h3>
+      <ul>
+        <li>Station and citywide coverage footprints (4/6/8 minutes)</li>
+        <li>Overlap vs gap visualizations for redundancy</li>
+        <li>Foundation layer for systems like Risk-Informed Dispatch</li>
+      </ul>
+
+      <h3>Next steps</h3>
+      <ul>
+        <li>Time-of-day comparisons (rush vs off-peak)</li>
+        <li>Barrier simulation (closures) to estimate coverage loss</li>
+        <li>Risk overlay integration and decision rules testing</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- RISK MODAL -->
+<div id="modal-risk" class="kh-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="kh-modal">
+    <div class="kh-modal-header">
+      <h2>Risk-Informed Dispatch (RFD) System Design</h2>
+      <button class="kh-modal-close" type="button" onclick="closeModal('modal-risk')" aria-label="Close">✕</button>
+    </div>
+
+    <div class="kh-modal-body">
+      <p>
+        Risk-Informed Dispatch incorporates <strong>place-based risk</strong> into initial dispatch decisions so two calls that look similar
+        by type and proximity can be treated differently when underlying exposure is higher.
+      </p>
+
+      <h3>How risk is captured</h3>
+      <ul>
+        <li><strong>Structure:</strong> building size, height, layout complexity</li>
+        <li><strong>Occupancy exposure:</strong> sleeping risk, vulnerable populations, high-occupancy sites</li>
+        <li><strong>Hazards:</strong> industrial/chemical, critical infrastructure</li>
+        <li><strong>Adjacency/exposure:</strong> density, attached exposures</li>
+        <li><strong>Access constraints:</strong> difficult entry, limited access routes</li>
+      </ul>
+
+      <h3>Integration concept</h3>
+      <ul>
+        <li>CAD performs address → risk tier lookup</li>
+        <li>Tier modifies initial assignment for selected incident types</li>
+        <li>Override + logging for transparency and auditing</li>
+      </ul>
+
+      <h3>Next steps</h3>
+      <ul>
+        <li>Define incident types eligible for modifiers</li>
+        <li>Create “reason tags” for transparency</li>
+        <li>Prototype rules using historical scenarios</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- GRANTS MODAL -->
+<div id="modal-grants" class="kh-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="kh-modal">
+    <div class="kh-modal-header">
+      <h2>CFD Grant Finder (Prototype)</h2>
+      <button class="kh-modal-close" type="button" onclick="closeModal('modal-grants')" aria-label="Close">✕</button>
+    </div>
+
+    <div class="kh-modal-body">
+      <p>
+        The Grant Finder reduces time spent bouncing between portals and PDFs by centralizing search,
+        filtering, and summarization.
+      </p>
+
+      <h3>Core workflow</h3>
+      <ol>
+        <li>Collect sources (datasets/APIs + internal references)</li>
+        <li>Normalize fields (deadline, eligibility, category)</li>
+        <li>Search + filter + sort by relevance/deadline</li>
+        <li>Summarize so users can shortlist without opening 20 files</li>
+      </ol>
+
+      <h3>Roadmap</h3>
+      <ul>
+        <li>Saved grants and department folders</li>
+        <li>Past CFD “wins” library</li>
+        <li>Optional AI summarization (if approved)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- MAPBOOK MODAL -->
+<div id="modal-mapbook" class="kh-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="kh-modal">
+    <div class="kh-modal-header">
+      <h2>Mapbook Automation (Planning Outputs)</h2>
+      <button class="kh-modal-close" type="button" onclick="closeModal('modal-mapbook')" aria-label="Close">✕</button>
+    </div>
+
+    <div class="kh-modal-body">
+      <p>
+        A repeatable export workflow for consistent planning deliverables that reduces manual edits and improves quality control.
+      </p>
+
+      <h3>Workflow</h3>
+      <ol>
+        <li>Standard templates (title, legend, scale, disclaimers)</li>
+        <li>Layer packaging and symbology standards</li>
+        <li>Batch export with naming/folder conventions</li>
+        <li>Documentation so outputs are repeatable</li>
+      </ol>
+
+      <h3>Next steps</h3>
+      <ul>
+        <li>Station/zone parameter controls</li>
+        <li>“One-click export” for standard deliverables</li>
+        <li>Consistency checks (missing layers, wrong scale)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- AI ROUTING MODAL -->
+<div id="modal-ai-routing" class="kh-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="kh-modal">
+    <div class="kh-modal-header">
+      <h2>AI-Supported Internal Request & Routing System</h2>
+      <button class="kh-modal-close" type="button" onclick="closeModal('modal-ai-routing')" aria-label="Close">✕</button>
+    </div>
+
+    <div class="kh-modal-body">
+      <p>
+        This project focuses on reducing delays and email overload by giving CFD members a guided, consistent way to submit requests and get answers.
+        Instead of sending multiple emails and hoping it reaches the right person, users get directed to the correct workflow immediately.
+      </p>
+
+      <h3>Examples</h3>
+      <ul>
+        <li>A member asks how to get a map of their response area → the system answers or routes the request correctly.</li>
+        <li>A station needs something from Logistics → the system generates and routes the request without multi-email threads.</li>
+      </ul>
+
+      <h3>What it enables</h3>
+      <ul>
+        <li>Less email traffic and fewer “who handles this?” delays</li>
+        <li>Standardized request documentation (more complete submissions)</li>
+        <li>Faster turnaround and clearer accountability</li>
+      </ul>
+
+      <h3>Next steps</h3>
+      <ul>
+        <li>Define request categories and routing rules</li>
+        <li>Build submission templates for common workflows</li>
+        <li>Prototype a knowledge base for common questions</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE APP MODAL -->
+<div id="modal-mobile-app" class="kh-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="kh-modal">
+    <div class="kh-modal-header">
+      <h2>CFD Department Mobile App Concept</h2>
+      <button class="kh-modal-close" type="button" onclick="closeModal('modal-mobile-app')" aria-label="Close">✕</button>
+    </div>
+
+    <div class="kh-modal-body">
+      <p>
+        This is a concept for a centralized department phone app—designed as a single access point for guidance, requests, references,
+        and internal resources. The goal is “one place for everything” that supports station operations and reduces friction.
+      </p>
+
+      <h3>Core idea</h3>
+      <ul>
+        <li>Mobile-first access to internal processes, forms, and quick help</li>
+        <li>Built to align with the AI-supported request routing concept</li>
+        <li>Improves consistency across stations and divisions</li>
+      </ul>
+
+      <h3>Potential features</h3>
+      <ul>
+        <li>Guided request submission + tracking</li>
+        <li>Internal reference library (policies, checklists, contacts)</li>
+        <li>Quick links to standard workflows</li>
+      </ul>
+
+      <h3>Next steps</h3>
+      <ul>
+        <li>Define MVP pages and highest-value workflows</li>
+        <li>Mock up user flow for station members</li>
+        <li>Plan integration points with existing systems</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.add("open");
+    el.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.remove("open");
+    el.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  document.addEventListener("click", function (e) {
+    const overlay = e.target.closest(".kh-modal-overlay");
+    if (!overlay) return;
+    const modal = e.target.closest(".kh-modal");
+    if (!modal) closeModal(overlay.id);
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    document.querySelectorAll(".kh-modal-overlay.open").forEach(el => closeModal(el.id));
+  });
+</script>
+
+<style>
+  .kh-modal-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.35);
+    z-index:9999;
+    padding:24px;
+    overflow:auto;
+  }
+  .kh-modal-overlay.open{
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+  }
+  .kh-modal{
+    width:min(980px,100%);
+    background:#ffffff;
+    color:#111827;
+    border-radius:16px;
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+    overflow:hidden;
+  }
+  .kh-modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 18px;
+    border-bottom:1px solid rgba(0,0,0,.08);
+  }
+  .kh-modal-header h2{
+    margin:0;
+    font-size:1.2rem;
+    line-height:1.25;
+  }
+  .kh-modal-close{
+    border:0;
+    background:transparent;
+    font-size:1.3rem;
+    cursor:pointer;
+    padding:6px 10px;
+    border-radius:10px;
+    color:#111827;
+  }
+  .kh-modal-close:hover{
+    background:rgba(0,0,0,.06);
+  }
+  .kh-modal-body{
+    padding:18px;
+  }
+  .kh-modal-body h3{
+    margin-top:18px;
+    margin-bottom:8px;
+  }
+  .kh-modal-body p{
+    line-height:1.6;
+  }
+  .kh-modal-body ul, .kh-modal-body ol{
+    line-height:1.6;
+  }
+</style>
+
+{% endblock %}

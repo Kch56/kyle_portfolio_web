@@ -1,8 +1,20 @@
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
+/* =========================
+   GLOBAL / RESET
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
     background: #f4f4f4;
     color: #333;
 }
@@ -16,195 +28,34 @@ h1, h2, h3 {
     margin-bottom: 20px;
 }
 
-
-
-
-/* Animated Gradient */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    color: white;
-    padding: 20px;
-    background: linear-gradient(-45deg, #34a853, #4285f4, #fbbc05, #ea4335);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
+ul {
+    padding-left: 20px;
 }
 
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.hero h1 {
-    font-size: 4rem;
+ul li {
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.cta-button {
-    background-color: #ffd700;
-    color: #333;
-    padding: 12px 24px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: all 0.3s ease-in-out;
-}
-
-.cta-button:hover {
-    background-color: #ffc107;
-    transform: scale(1.1);
 }
 
 
-
-
-
-
-
-
-/* About Section */
-.about {
-    padding: 60px 20px;
-    background-color: #fff;
-    text-align: center;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+/* =========================
+   SHARED ANIMATIONS
+========================= */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
-
-.about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.about p {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
 }
 
 
-
-/* About Section */
-.about {
-    padding: 60px 20px;
-    background-color: #fff;
-    text-align: center;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.about p {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-
-
-
-
-
-
-
-
-
-/* Projects Section */
-.projects {
-    padding: 60px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-.project-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.project-item {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.project-item img {
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-}
-
-.project-item h3 {
-    font-size: 1.5rem;
-    margin: 15px 0;
-}
-
-.project-item p {
-    padding: 0 15px;
-    font-size: 1rem;
-    color: #555;
-}
-
-.project-link {
-    display: block;
-    background-color: #4285f4;
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-    border-radius: 0 0 10px 10px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.project-link:hover {
-    background-color: #3367d6;
-}
-
-
-
-
-
-/* Navbar Styles */
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -266,18 +117,142 @@ h1, h2, h3 {
 }
 
 
+/* =========================
+   CTA BUTTON (shared)
+========================= */
+.cta-button {
+    display: inline-block;
+    background-color: #ffd700;
+    color: #333;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #ffc107;
+    transform: scale(1.1);
+}
 
 
+/* =========================
+   HOME HERO
+========================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background: linear-gradient(-45deg, #34a853, #4285f4, #fbbc05, #ea4335);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
 
 
+/* =========================
+   BASIC ABOUT SECTION (home)
+========================= */
+.about {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
 
 
+/* =========================
+   PROJECTS SECTION (older grid)
+========================= */
+.projects {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-item img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.project-item h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+.project-item p {
+    padding: 0 15px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.project-link {
+    display: block;
+    background-color: #4285f4;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #3367d6;
+}
 
 
-
-
-
-/* Footer */
+/* =========================
+   FOOTER
+========================= */
 footer {
     background-color: #333;
     color: #fff;
@@ -323,53 +298,13 @@ footer span {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Hero Section for About Page */
+/* =========================
+   ABOUT PAGE HERO
+========================= */
 .hero-about {
     text-align: center;
     padding: 20px 10px;
-    background: rgba(0, 0, 0, 0.6); /* Slightly transparent for subtle effect */
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 8px;
     margin-bottom: 30px;
     color: white;
@@ -377,7 +312,7 @@ footer span {
 }
 
 .hero-about h1 {
-    font-size: 2rem; /* Smaller font size than home page */
+    font-size: 2rem;
     margin-bottom: 10px;
     color: #ffd700;
 }
@@ -386,13 +321,13 @@ footer span {
     font-size: 1rem;
     line-height: 1.6;
     margin: 0 auto;
-    max-width: 800px; /* Limit width for better readability */
+    max-width: 800px;
 }
 
 
-
-
-/* General Page Layout */
+/* =========================
+   ABOUT PAGE LAYOUT
+========================= */
 .about-page {
     padding: 60px 20px;
     background: linear-gradient(-45deg, #34a853, #4285f4, #fbbc05, #ea4335);
@@ -400,17 +335,15 @@ footer span {
     animation: gradientAnimation 15s ease infinite;
 }
 
-/* Two-Column Grid Layout */
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Equal columns */
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
     align-items: start;
 }
 
-/* Left Column: About Content */
 .about-left {
     background: rgba(0, 0, 0, 0.5);
     padding: 30px;
@@ -418,8 +351,8 @@ footer span {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     color: white;
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: space-between; /* Spread content evenly */
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .about-left h2, .about-left h3 {
@@ -464,7 +397,6 @@ footer span {
     font-size: 1.1rem;
 }
 
-/* Right Column: Timeline */
 .timeline {
     background: rgba(0, 0, 0, 0.5);
     padding: 30px;
@@ -472,14 +404,14 @@ footer span {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     color: white;
     display: flex;
-    flex-direction: column; /* Stack timeline items */
-    justify-content: space-between; /* Spread timeline items evenly */
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .timeline-container {
     position: relative;
     padding: 20px 0;
-    border-left: 4px solid rgba(255, 255, 255, 0.5); /* Vertical timeline line */
+    border-left: 4px solid rgba(255, 255, 255, 0.5);
 }
 
 .timeline-item {
@@ -492,7 +424,6 @@ footer span {
     margin-bottom: 0;
 }
 
-/* Adjust Marker and Content for Timeline */
 .marker {
     position: absolute;
     top: 0;
@@ -512,19 +443,16 @@ footer span {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     .about-grid {
-        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        grid-template-columns: 1fr;
     }
 
     .about-left, .timeline {
-        justify-content: flex-start; /* Align content at the top */
+        justify-content: flex-start;
     }
 }
 
-
-/* Call-to-Action Section at the Bottom */
 .cta-bottom {
     text-align: center;
     margin-top: 40px;
@@ -540,76 +468,10 @@ footer span {
     color: white;
 }
 
-.cta-bottom .cta-button {
-    display: inline-block;
-    background-color: #ffd700;
-    color: #333;
-    padding: 12px 24px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-}
 
-.cta-bottom .cta-button:hover {
-    background-color: #ffc107;
-    transform: scale(1.1);
-}
-
-
-/* Call-to-Action Button */
-.cta p {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: #ffd700;
-    color: #333;
-    padding: 12px 24px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-}
-
-.cta-button:hover {
-    background-color: #ffc107;
-    transform: scale(1.1);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Resume Page Background and Layout */
+/* =========================
+   RESUME PAGE
+========================= */
 .resume-page {
     padding: 40px 20px;
     width: 100%;
@@ -619,66 +481,53 @@ footer span {
     animation: gradientAnimation 15s ease infinite;
 }
 
-/* Header Section */
 .resume-header {
     text-align: center;
     margin-bottom: 40px;
     color: white;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Box shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Section Styling */
 .resume-section {
     margin-bottom: 40px;
-    background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
+    background: rgba(0, 0, 0, 0.6);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Box shadow for sections */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .resume-section h2 {
     font-size: 1.8rem;
-    color: #ffd700; /* Golden headings for contrast */
+    color: #ffd700;
     margin-bottom: 10px;
 }
 
-/* Interactive Boxes */
 .interactive-box {
-    background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+    background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Consistent box shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     margin-bottom: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .interactive-box:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Text Styling */
 .resume-section p,
 .resume-section ul li,
 .interactive-box h3,
 .interactive-box p {
-    color: white; /* Regular text is white */
+    color: white;
     font-size: 1rem;
     line-height: 1.6;
 }
 
-ul {
-    padding-left: 20px;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-/* Skills Section */
 .skills-list {
     display: flex;
     flex-wrap: wrap;
@@ -692,7 +541,7 @@ ul li {
     color: white;
     font-size: 1rem;
     transition: transform 0.3s ease, background 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for skills */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .skill-item:hover {
@@ -701,53 +550,28 @@ ul li {
     transform: scale(1.1);
 }
 
-/* Responsive Design */
 @media screen and (max-width: 768px) {
-    .resume-header p {
-        font-size: 0.9rem;
-    }
-
-    .resume-section h2 {
-        font-size: 1.5rem;
-    }
-
-    ul li {
-        font-size: 0.9rem;
-    }
+    .resume-header p { font-size: 0.9rem; }
+    .resume-section h2 { font-size: 1.5rem; }
+    ul li { font-size: 0.9rem; }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Projects Page Background and Layout */
+/* =========================
+   PROJECTS PAGES (projects/research/current)
+========================= */
 .projects-page {
     padding: 40px 20px;
     width: 100%;
-    min-height: 100vh; /* Ensure it fills the full viewport height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align content to the top */
+    justify-content: flex-start;
     background: linear-gradient(-45deg, #34a853, #4285f4, #fbbc05, #ea4335);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
 }
 
-/* Header Section */
 .projects-header {
     text-align: center;
     margin-bottom: 40px;
@@ -767,17 +591,15 @@ ul li {
     max-width: 800px;
 }
 
-/* Projects Grid */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     width: 100%;
-    align-items: start; /* Ensure items align at the top */
+    align-items: start;
     padding-bottom: 20px;
 }
 
-/* Project Card */
 .project-card {
     background: rgba(0, 0, 0, 0.6);
     padding: 20px;
@@ -785,7 +607,8 @@ ul li {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     color: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: auto; /* Allow proportional sizing */
+    height: auto;
+    min-width: 0; /* prevent overflow */
 }
 
 .project-card:hover {
@@ -805,7 +628,6 @@ ul li {
     margin-bottom: 10px;
 }
 
-/* Project Button */
 .project-button {
     display: inline-block;
     background-color: #ffd700;
@@ -823,67 +645,30 @@ ul li {
     transform: scale(1.1);
 }
 
-/* Remove White Space from Body and HTML */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-}
-
-/* Responsive Design */
 @media screen and (max-width: 768px) {
-    .projects-header h1 {
-        font-size: 2rem;
-    }
-
-    .projects-header p {
-        font-size: 1rem;
-    }
-
-    .project-card h2 {
-        font-size: 1.2rem;
-    }
-
-    .project-card p {
-        font-size: 0.9rem;
-    }
+    .projects-header h1 { font-size: 2rem; }
+    .projects-header p { font-size: 1rem; }
+    .project-card h2 { font-size: 1.2rem; }
+    .project-card p { font-size: 0.9rem; }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Contact Page Background and Layout */
+/* =========================
+   CONTACT PAGE
+========================= */
 .contact-page {
     padding: 40px 20px;
     width: 100%;
-    min-height: 100vh; /* Full-screen height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    justify-content: center;
+    align-items: center;
     background: linear-gradient(-45deg, #34a853, #4285f4, #fbbc05, #ea4335);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
 }
 
-/* Contact Page Header */
 .contact-header {
     text-align: center;
     color: white;
@@ -891,21 +676,20 @@ html, body {
 }
 
 .contact-header h2 {
-    font-size: 2.5rem; /* Adjust the size for header */
+    font-size: 2.5rem;
     color: #ffd700;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added shadow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .contact-header p {
-    font-size: 1.5rem; /* Reduce the size for description */
+    font-size: 1.5rem;
     line-height: 1.8;
     margin: 0 auto;
     max-width: 800px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added shadow */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Contact Information Section */
 .contact-info {
     text-align: center;
     margin-top: 40px;
@@ -913,24 +697,24 @@ html, body {
 }
 
 .contact-info h3 {
-    font-size: 2.5rem; /* Larger font size */
+    font-size: 2.5rem;
     color: #ffd700;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added shadow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .contact-info p {
-    font-size: 1.5rem; /* Larger font size */
+    font-size: 1.5rem;
     margin-bottom: 10px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added shadow */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .contact-info a {
     color: #ffd700;
     font-weight: bold;
-    font-size: 1.5rem; /* Larger font size for links */
+    font-size: 1.5rem;
     text-decoration: none;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added shadow */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .contact-info a:hover {
@@ -938,23 +722,22 @@ html, body {
     transform: scale(1.05);
 }
 
-/* Contact Form Section */
 .contact-form {
-    text-align: left; /* Align labels and inputs to the left */
+    text-align: left;
     margin-top: 40px;
     background: rgba(0, 0, 0, 0.5);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 600px; /* Adjust form width */
+    max-width: 600px;
 }
 
 .contact-form h3 {
-    font-size: 2rem; /* Adjust the size for form title */
+    font-size: 2rem;
     color: #ffd700;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added shadow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .contact-form label {
@@ -962,14 +745,14 @@ html, body {
     font-size: 1.1rem;
     color: white;
     margin-top: 15px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added shadow */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
     padding: 12px;
-    font-size: 1rem; /* Adjust font size for input fields */
+    font-size: 1rem;
     margin-top: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -979,7 +762,7 @@ html, body {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #4285f4; /* Highlight with blue on focus */
+    border-color: #4285f4;
     outline: none;
 }
 
@@ -990,10 +773,10 @@ html, body {
     padding: 12px 24px;
     border-radius: 5px;
     font-weight: bold;
-    font-size: 1.2rem; /* Larger font size */
+    font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added shadow */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .contact-form button:hover {
@@ -1001,52 +784,11 @@ html, body {
     transform: scale(1.1);
 }
 
-/* Hero Section Background Animation */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Responsive Layout for Mobile */
 @media screen and (max-width: 768px) {
-    .contact-info a {
-        font-size: 1.2rem;
-    }
-
+    .contact-info a { font-size: 1.2rem; }
     .contact-form input,
-    .contact-form textarea {
-        font-size: 1rem;
-    }
-
-    .contact-form button {
-        font-size: 1.1rem;
-    }
-
-    .contact-header h2 {
-        font-size: 2rem; /* Adjust for smaller screens */
-    }
-
-    .contact-header p {
-        font-size: 1.2rem;
-    }
+    .contact-form textarea { font-size: 1rem; }
+    .contact-form button { font-size: 1.1rem; }
+    .contact-header h2 { font-size: 2rem; }
+    .contact-header p { font-size: 1.2rem; }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

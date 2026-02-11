@@ -1,0 +1,456 @@
+{% extends 'base.html' %}
+
+{% block title %}Research & Strategy - Kyle Hampton{% endblock %}
+
+{% block content %}
+<section class="projects-page">
+
+  <!-- =========================
+       Page Header
+  ========================== -->
+  <div class="projects-header">
+    <h1>Research & Strategy</h1>
+    <p>
+      I don’t just build tools—I research how systems should work. This page highlights two core research papers and the
+      additional research threads that directly support my CFD projects (response modeling, risk-based dispatch concepts,
+      GIS integration, automation, and governance).
+    </p>
+  </div>
+
+  <!-- =========================
+       Featured Research
+  ========================== -->
+  <div class="projects-grid">
+
+    <!-- Featured Research 1 (GeoAI Doc) -->
+    <div class="project-card">
+      <h2>Using Esri GeoAI for the Charlotte Risk Intelligence Dashboard</h2>
+      <p>
+        A research brief exploring Esri’s GeoAI tools and how they can strengthen the Charlotte Risk Intelligence Dashboard
+        through predictive modeling, real-time monitoring, and spatial decision support.
+      </p>
+
+      <p><strong>What this research covers:</strong></p>
+      <ul>
+        <li>What GeoAI is and why spatial AI matters for public safety workflows</li>
+        <li>Esri capability overview (Notebooks, GeoAnalytics, deep learning, real-time feeds)</li>
+        <li>How GeoAI supports risk prediction, scenario simulation, and dynamic zones</li>
+        <li>Data needs and practical implementation considerations</li>
+        <li>Responsible use: validation, transparency, and operational readiness</li>
+      </ul>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button class="project-button" type="button" onclick="openModal('modal-geoai')">View Research Summary</button>
+        <a class="project-button"
+           href="{{ url_for('static', filename='esri.pdf') }}"
+
+           target="_blank" rel="noopener">
+          View PDF
+        </a>
+      </div>
+    </div>
+
+    <!-- Featured Research 2 (Tech Research PDF) -->
+    <div class="project-card">
+      <h2>Fire Department Technology Research (Decision Tools + Feasibility)</h2>
+      <p>
+        A research overview on why fire departments should prioritize technology—focused on analytics, GIS intelligence,
+        automation, and how grant funding makes adoption more achievable.
+      </p>
+
+      <p><strong>What this research covers:</strong></p>
+      <ul>
+        <li>How data + GIS improve situational awareness and planning</li>
+        <li>Automation that reduces repetitive work and increases consistency</li>
+        <li>Decision tools (dashboards, workflows, reporting standards)</li>
+        <li>Why predictive analytics matters for prevention and resource planning</li>
+        <li>Feasibility through grants + phased adoption</li>
+      </ul>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button class="project-button" type="button" onclick="openModal('modal-tech')">View Research Summary</button>
+        <a class="project-button"
+           href="{{ url_for('static', filename='rea.pdf') }}"
+
+
+           target="_blank" rel="noopener">
+          View PDF
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- =========================
+       Other Topics
+  ========================== -->
+  <div class="projects-header" style="margin-top:42px;">
+    <h2 style="margin-bottom:10px;">Other Topics I’ve Researched & Applied</h2>
+    <p style="margin-top:0;">
+      These research threads inform the way I design systems. Click “View Samples” to see how I approach the problem and
+      how the research connects to real implementation.
+    </p>
+  </div>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <h2>Response Modeling & Coverage Footprints</h2>
+      <p>
+        Research into building realistic reach footprints based on operational travel behavior rather than theoretical assumptions.
+      </p>
+      <ul>
+        <li>Time thresholds (4/6/8 minutes)</li>
+        <li>Network routing vs simple buffers</li>
+        <li>Validation and bias checks</li>
+      </ul>
+      <button class="project-button" type="button" onclick="openModal('modal-topic-response')">View Samples</button>
+    </div>
+
+    <div class="project-card">
+      <h2>Risk Tier Framework Design</h2>
+      <p>
+        Research on defining “risk” in a measurable, explainable way that works in operations—not just theory.
+      </p>
+      <ul>
+        <li>Structure + occupancy + hazards</li>
+        <li>Exposure + access constraints</li>
+        <li>Tier design (Tier 1–4)</li>
+      </ul>
+      <button class="project-button" type="button" onclick="openModal('modal-topic-risk')">View Samples</button>
+    </div>
+
+    <div class="project-card">
+      <h2>CAD + GIS Integration Planning</h2>
+      <p>
+        Research on how decision systems connect to dispatch workflows—especially lookup patterns, transparency, and auditability.
+      </p>
+      <ul>
+        <li>Address → risk lookup concept</li>
+        <li>Reason-tags for transparency</li>
+        <li>Overrides + logging for governance</li>
+      </ul>
+      <button class="project-button" type="button" onclick="openModal('modal-topic-cad')">View Samples</button>
+    </div>
+
+    <div class="project-card">
+      <h2>Automation for Planning Deliverables</h2>
+      <p>
+        Research into making planning outputs repeatable: mapbooks, dashboards, standardized layers, and batch export strategy.
+      </p>
+      <ul>
+        <li>Template-driven outputs</li>
+        <li>Consistency across deliverables</li>
+        <li>Reducing manual map edits</li>
+      </ul>
+      <button class="project-button" type="button" onclick="openModal('modal-topic-auto')">View Samples</button>
+    </div>
+
+    <div class="project-card">
+      <h2>Coverage Redundancy & Station Overlap</h2>
+      <p>
+        Research into how redundancy should be interpreted in real planning—where overlap is resilience and where gaps create risk.
+      </p>
+      <ul>
+        <li>Primary vs secondary reach</li>
+        <li>Overlap density mapping</li>
+        <li>Identifying fragile coverage zones</li>
+      </ul>
+      <button class="project-button" type="button" onclick="openModal('modal-topic-overlap')">View Samples</button>
+    </div>
+
+    <div class="project-card">
+      <h2>Time-of-Day Performance Variation</h2>
+      <p>
+        Research into how response reach shifts across congestion windows and how static models can misrepresent performance.
+      </p>
+      <ul>
+        <li>Peak vs off-peak buckets</li>
+        <li>Corridor sensitivity checks</li>
+        <li>Performance comparisons by window</li>
+      </ul>
+      <button class="project-button" type="button" onclick="openModal('modal-topic-time')">View Samples</button>
+    </div>
+
+    <div class="project-card">
+      <h2>Scenario Simulation & Corridor Testing</h2>
+      <p>
+        Research into how coverage changes when the network changes—closures, barriers, station downtime, or resource shifts.
+      </p>
+      <ul>
+        <li>Barrier simulation concepts</li>
+        <li>Stress-testing assumptions</li>
+        <li>Resilience-based planning</li>
+      </ul>
+      <button class="project-button" type="button" onclick="openModal('modal-topic-sim')">View Samples</button>
+    </div>
+
+    <div class="project-card">
+      <h2>Governance & Guardrails for Decision Systems</h2>
+      <p>
+        Research into how risk-assisted systems stay safe and accountable: transparency, human override, and audit trails.
+      </p>
+      <ul>
+        <li>Human override always available</li>
+        <li>Reason-tags for transparency</li>
+        <li>Logging for review and tuning</li>
+      </ul>
+      <button class="project-button" type="button" onclick="openModal('modal-topic-governance')">View Samples</button>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     MODALS (Featured Research)
+========================== -->
+
+<div id="modal-geoai" class="kh-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="kh-modal">
+    <div class="kh-modal-header">
+      <h2>Research Summary: Esri GeoAI for the Charlotte Risk Intelligence Dashboard</h2>
+      <button class="kh-modal-close" type="button" onclick="closeModal('modal-geoai')" aria-label="Close">✕</button>
+    </div>
+
+    <div class="kh-modal-body">
+      <p>
+        This research explores how Esri’s GeoAI capabilities can strengthen a citywide risk intelligence dashboard by combining
+        GIS layers with machine learning to support predictive risk modeling, real-time monitoring, and decision-ready outputs.
+      </p>
+
+      <h3>Why GeoAI matters</h3>
+      <ul>
+        <li>Risk is spatial: exposure, access, density, hazards, and response constraints all vary by location.</li>
+        <li>GeoAI helps detect patterns and forecast risk areas instead of only mapping what already happened.</li>
+        <li>Outputs can be delivered as map layers that planners and operations can interpret quickly.</li>
+      </ul>
+
+      <h3>Key capabilities (high level)</h3>
+      <ul>
+        <li><strong>GeoAnalytics + ML:</strong> identify hotspots and forecast risk using large spatial datasets.</li>
+        <li><strong>Deep learning (imagery):</strong> detect features that support risk context (built environment signals).</li>
+        <li><strong>Notebooks:</strong> Python workflows to preprocess data, prototype models, and publish outputs.</li>
+        <li><strong>Real-time analysis:</strong> ingest live feeds (weather/sensors) to update risk layers.</li>
+      </ul>
+
+      <h3>How it applies to Charlotte</h3>
+      <ul>
+        <li><strong>Risk prediction:</strong> anticipate higher-risk areas based on historical + environmental signals.</li>
+        <li><strong>Dynamic zones:</strong> update zones based on development, density changes, or incident trends.</li>
+        <li><strong>Scenario simulation:</strong> test how risk changes under conditions (heat, storms, special events).</li>
+        <li><strong>Decision support:</strong> provide map-ready outputs for planners, leadership, and field awareness.</li>
+      </ul>
+
+      <h3>Implementation considerations</h3>
+      <ul>
+        <li>Data access + quality is the biggest dependency.</li>
+        <li>Model outputs must be validated before influencing operations.</li>
+        <li>Keep the system explainable and auditable (transparent inputs, documented methods).</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="modal-tech" class="kh-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="kh-modal">
+    <div class="kh-modal-header">
+      <h2>Research Summary: Fire Department Technology</h2>
+      <button class="kh-modal-close" type="button" onclick="closeModal('modal-tech')" aria-label="Close">✕</button>
+    </div>
+    <div class="kh-modal-body">
+      <p>
+        This research explains why technology should be treated as operational infrastructure. The focus is on how GIS intelligence,
+        analytics, automation, and standardized workflows improve planning quality and reduce repetitive work—especially in growing cities.
+      </p>
+
+      <h3>Main themes</h3>
+      <ul>
+        <li>GIS is essential because risk, access, and coverage are spatial problems.</li>
+        <li>Automation reduces manual overhead and improves consistency.</li>
+        <li>Dashboards and decision tools translate data into action.</li>
+        <li>Grant pathways make adoption feasible through phased investment.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- =========================
+     Topic Modals (Samples)
+========================== -->
+
+<div id="modal-topic-response" class="kh-modal-overlay" aria-hidden="true">
+  <div class="kh-modal">
+    <div class="kh-modal-header">
+      <h2>Samples: Response Modeling & Coverage</h2>
+      <button class="kh-modal-close" type="button" onclick="closeModal('modal-topic-response')">✕</button>
+    </div>
+    <div class="kh-modal-body">
+      <h3>How I think about coverage</h3>
+      <ul>
+        <li>Coverage should reflect real travel behavior, not ideal assumptions.</li>
+        <li>Network-based reach is more defensible than simple circles/buffers.</li>
+        <li>Validation should include corridor checks and sample comparisons to real responses.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="modal-topic-risk" class="kh-modal-overlay" aria-hidden="true">
+  <div class="kh-modal">
+    <div class="kh-modal-header">
+      <h2>Samples: Risk Tier Framework</h2>
+      <button class="kh-modal-close" type="button" onclick="closeModal('modal-topic-risk')">✕</button>
+    </div>
+    <div class="kh-modal-body">
+      <h3>What makes a risk model usable</h3>
+      <ul>
+        <li>Measurable inputs</li>
+        <li>Explainable outputs (reason-tags)</li>
+        <li>Direct link to a decision rule</li>
+        <li>Simple tiering so it stays consistent</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="modal-topic-cad" class="kh-modal-overlay" aria-hidden="true">
+  <div class="kh-modal">
+    <div class="kh-modal-header">
+      <h2>Samples: CAD + GIS Integration</h2>
+      <button class="kh-modal-close" type="button" onclick="closeModal('modal-topic-cad')">✕</button>
+    </div>
+    <div class="kh-modal-body">
+      <h3>Integration concept</h3>
+      <p>
+        CAD receives an address → system matches to a location record → returns tier + reason-tags → dispatch logic can apply modifiers
+        within guardrails. Overrides are always allowed and logged.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="modal-topic-auto" class="kh-modal-overlay" aria-hidden="true">
+  <div class="kh-modal">
+    <div class="kh-modal-header">
+      <h2>Samples: Automation for Planning</h2>
+      <button class="kh-modal-close" type="button" onclick="closeModal('modal-topic-auto')">✕</button>
+    </div>
+    <div class="kh-modal-body">
+      <h3>My focus</h3>
+      <ul>
+        <li>Template-driven outputs</li>
+        <li>Layer standards + consistent export settings</li>
+        <li>Batch exports and naming conventions</li>
+        <li>Consistency checks to prevent drift</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="modal-topic-overlap" class="kh-modal-overlay" aria-hidden="true">
+  <div class="kh-modal">
+    <div class="kh-modal-header">
+      <h2>Samples: Coverage Redundancy</h2>
+      <button class="kh-modal-close" type="button" onclick="closeModal('modal-topic-overlap')">✕</button>
+    </div>
+    <div class="kh-modal-body">
+      <p>
+        Overlap is resilience. I look at where coverage depends on a single station, where redundancy is strong, and how overlap changes
+        across time windows or network disruptions.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="modal-topic-time" class="kh-modal-overlay" aria-hidden="true">
+  <div class="kh-modal">
+    <div class="kh-modal-header">
+      <h2>Samples: Time-of-Day Variation</h2>
+      <button class="kh-modal-close" type="button" onclick="closeModal('modal-topic-time')">✕</button>
+    </div>
+    <div class="kh-modal-body">
+      <p>
+        I compare reach under different time buckets to understand corridor sensitivity and how static models can misrepresent performance.
+        The goal is to avoid planning based on averages that hide peak constraints.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="modal-topic-sim" class="kh-modal-overlay" aria-hidden="true">
+  <div class="kh-modal">
+    <div class="kh-modal-header">
+      <h2>Samples: Scenario Simulation</h2>
+      <button class="kh-modal-close" type="button" onclick="closeModal('modal-topic-sim')">✕</button>
+    </div>
+    <div class="kh-modal-body">
+      <p>
+        I research how coverage changes when conditions change—closures, barriers, station downtime, or resource shifts—so planning can
+        stress-test assumptions before decisions are made.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="modal-topic-governance" class="kh-modal-overlay" aria-hidden="true">
+  <div class="kh-modal">
+    <div class="kh-modal-header">
+      <h2>Samples: Governance & Guardrails</h2>
+      <button class="kh-modal-close" type="button" onclick="closeModal('modal-topic-governance')">✕</button>
+    </div>
+    <div class="kh-modal-body">
+      <ul>
+        <li>Human override always available</li>
+        <li>Reason-tags for transparency</li>
+        <li>Audit logging for review and tuning</li>
+        <li>Caps and selective applicability to prevent runaway upgrades</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.add("open");
+    el.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.remove("open");
+    el.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  document.addEventListener("click", function (e) {
+    const overlay = e.target.closest(".kh-modal-overlay");
+    if (!overlay) return;
+    const modal = e.target.closest(".kh-modal");
+    if (!modal) closeModal(overlay.id);
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    document.querySelectorAll(".kh-modal-overlay.open").forEach(el => closeModal(el.id));
+  });
+</script>
+
+<!-- Light modal override (prevents black blocks) -->
+<style>
+  .kh-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:9999;padding:24px;overflow:auto}
+  .kh-modal-overlay.open{display:flex;align-items:flex-start;justify-content:center}
+  .kh-modal{width:min(980px,100%);background:#fff;color:#111827;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.25);overflow:hidden}
+  .kh-modal-header{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-bottom:1px solid rgba(0,0,0,.08)}
+  .kh-modal-header h2{margin:0;font-size:1.2rem;line-height:1.25}
+  .kh-modal-close{border:0;background:transparent;font-size:1.3rem;cursor:pointer;padding:6px 10px;border-radius:10px;color:#111827}
+  .kh-modal-close:hover{background:rgba(0,0,0,.06)}
+  .kh-modal-body{padding:18px;line-height:1.6}
+  .kh-modal-body h3{margin-top:18px;margin-bottom:8px}
+</style>
+
+{% endblock %}

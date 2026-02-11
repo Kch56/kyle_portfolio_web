@@ -16,23 +16,34 @@
                 <a href="/">Kyle Hampton</a>
             </div>
             <button class="navbar-toggler" type="button" onclick="toggleNavbar()">
-                &#9776; <!-- Hamburger icon -->
+                &#9776;
             </button>
             <ul class="navbar-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
-                <li><a href="/projects">Projects</a></li>
+
+                <!-- ✅ Changed label -->
+                 <li><a href="/current-projects">Current/Recent Projects</a></li>
+                <li><a href="/projects">Past Projects</a></li>
+
+                <!-- ✅ New page -->
+
+                <li><a href="/research">Research</a></li>
+
                 <li><a href="/resume">Resume</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <ma=in class="content">
+
+    <!-- ✅ Fixed the typo: ma=in -> main -->
+    <main class="content">
         {% block content %}{% endblock %}
     </main>
+
     <footer>
         <div class="footer-container">
-            <p>&copy; 2025 Kyle Hampton. Built with <span>❤️</span> and code.</p>
+            <p>&copy; 2026 Kyle Hampton. Built with <span>❤️</span> and code.</p>
             <ul class="social-links">
                 <li><a href="https://github.com/Kch56" target="_blank">GitHub</a></li>
                 <li><a href="https://www.linkedin.com/in/kyle-c-hampton/" target="_blank">LinkedIn</a></li>
@@ -44,9 +55,7 @@
 <script>
     function toggleNavbar() {
         const navbarMenu = document.querySelector('.navbar-menu');
-        navbarMenu.classList.toggle('show'); // Toggle the 'show' class to display/hide the menu
+        navbarMenu.classList.toggle('show');
     }
 </script>
-
-
 </html>

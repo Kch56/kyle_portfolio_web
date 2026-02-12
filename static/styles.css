@@ -792,3 +792,36 @@ footer span {
     .contact-header h2 { font-size: 2rem; }
     .contact-header p { font-size: 1.2rem; }
 }
+.more-projects-cta {
+  margin-top: 80px;
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-radius: 20px;
+}
+
+.more-projects-content h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.more-projects-content p {
+  max-width: 600px;
+  margin: 0 auto 25px auto;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.secondary-cta {
+  background: white;
+  color: #0f172a;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.secondary-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}

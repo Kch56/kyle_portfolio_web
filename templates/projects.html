@@ -1,8 +1,71 @@
-{% extends 'base.html' %}{% block title %}Work | Kyle Hampton{% endblock %}{% block content %}<section class="page-hero shell"><p class="eyebrow">Selected work</p><h1>Projects that connect data to action.</h1><p>General descriptions only. Internal data, architecture, and operational details are intentionally excluded.</p></section><section class="section shell"><div class="card-grid two">
-<article class="project card"><span class="tag">Python · GIS · Analytics</span><h2>Response Analysis & Coverage Modeling</h2><p>Built analytical workflows and map-based tools to study historical response performance, service coverage, and resource movement. The work turns large operational datasets into visual information that supports planning conversations.</p><p class="outcome">Focus: spatial modeling, data cleaning, routing concepts, performance validation</p></article>
-<article class="project card"><span class="tag">Snowflake · Python · SQL</span><h2>Enterprise Data Transfer & Validation</h2><p>Developed and tested reusable workflows for reading enterprise views from Snowflake and loading them into downstream systems. Added schema inspection, type handling, batching, and validation to support dependable data movement at scale.</p><p class="outcome">Focus: data engineering, connectors, quality checks, repeatable processing</p></article>
-<article class="project card"><span class="tag">Flask · SQL · Application Support</span><h2>Operational Application Development</h2><p>Built and maintained web applications that help staff review geographic information, find operational notes, and complete specialized workflows with less manual effort.</p><p class="outcome">Focus: user-centered development, maintenance, troubleshooting, secure internal tools</p></article>
-<article class="project card"><span class="tag">SQL · Data Quality · Reporting</span><h2>Cross-System Data Reconciliation</h2><p>Compared records across enterprise systems, documented exceptions, and created repeatable queries that help teams understand gaps without exposing source data.</p><p class="outcome">Focus: matching logic, descriptive analysis, audit-ready documentation</p></article>
-<article class="project card"><span class="tag">Python · GIS · Automation</span><h2>Planning Mapbook Automation</h2><p>Created a repeatable workflow for producing map-based planning materials with consistent formatting, filters, and outputs as source information changes.</p><p class="outcome">Focus: mapping, batch generation, quality control, deployment</p></article>
-<article class="project card"><span class="tag">Python · Excel · Workflow Design</span><h2>Quality Assurance Tools</h2><p>Designed tools that help reviewers locate incomplete or inconsistent records, examine supporting information, capture corrections, and export clean results.</p><p class="outcome">Focus: validation rules, reviewer experience, traceable corrections</p></article></div></section>
-<section class="section feature-band"><div class="shell"><div class="section-heading"><p class="eyebrow">Earlier work</p><h2>Where I started building.</h2></div><div class="compact-grid"><div><h3>Cash Compass</h3><p>A Flask-based personal finance concept for budgets, expenses, and financial goals.</p></div><div><h3>CMPD Data Capture</h3><p>A redesigned workflow for organizing community-program information and work logs.</p></div><div><h3>YMCA Swim Tool</h3><p>A scheduling and administration concept built to reduce repetitive work.</p></div><div><h3>Python Systems</h3><p>Early command-line projects covering ordering, checkout, and banking logic.</p></div></div></div></section>{% endblock %}
+{% extends 'base.html' %}
+
+{% block title %}Past Projects - Kyle Hampton{% endblock %}
+
+{% block content %}
+<section class="projects-page">
+    <!-- Header Section -->
+    <div class="projects-header">
+        <h1>Past Projects</h1>
+        <p>Explore some of the work I’ve done, showcasing my skills in Python, web development, data analysis, and more.</p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+            <h2>Cash Compass</h2>
+            <p>A personal finance web application that helps users track expenses, manage budgets, and set financial goals.</p>
+            <p><strong>Technologies:</strong> Flask, Python, HTML/CSS, Chart.js</p>
+            <a href="https://drive.google.com/drive/folders/15M0xTS-zL53Ye6yReaGHFgP7J5qSF44N?usp=sharing" class="project-button">View Project</a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+            <h2>Solar Panel Sidewalk</h2>
+            <p>Designed and modeled a concept for sustainable energy sidewalks using solar panels for Raytheon Technologies.</p>
+            <p><strong>Technologies:</strong> 3D Modeling(Fusion 360), Research, Presentation</p>
+            <a href="https://docs.google.com/presentation/d/1zgVBupHCTIfIPJSjULsGGwR3t1Z8jvYPBIR09gHciW8/edit?usp=sharing" class="project-button">View Details</a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+            <h2>CMPD National Night Out data capture spreadsheet</h2>
+            <p>Organized a community event to strengthen police-community relations and revamped internal data processes.</p>
+            <p><strong>Technologies:</strong> Excel, Google app script, Event Planning, Data Analytics</p>
+            <a href="https://docs.google.com/document/d/1U9sCMjohFqQV_SvK-UmEWKyVhmjkokLKAnBk-N8z6Mw/edit?usp=sharing" class="project-button">View Details</a>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+            <h2>YMCA Swim App</h2>
+            <p>Developed a Python script to manage YMCA swim lesson schedules and streamline class operations.</p>
+            <p><strong>Technologies:</strong> Python, Excel Automation, Google app script, HTML/CSS</p>
+            <a href="https://docs.google.com/document/d/17675_MJeAyNW-h15UcaDSYV5t2nsDXTNaCzPbijGXkQ/edit?usp=sharing" class="project-button">View Script</a>
+        </div>
+
+        <div class="project-card">
+            <h2>ATM - Simple Banking System</h2>
+            <p>A Python-based banking system that allows users to create accounts, check balances, and deposit/withdraw funds. It demonstrates functionality like input handling, list manipulation, and basic logic for account management.</p>
+            <p><strong>Technologies:</strong> Python, Input Handling, Logical Programming</p>
+            <a href="https://github.com/Kch56/Monkey-Money---Simple-Banking-System.git" class="project-button">View Code</a>
+        </div>
+
+        <div class="project-card">
+            <h2>Checkout System</h2>
+            <p>A Python-based checkout system that calculates the total price for items in a virtual store. It features input validation, user interaction, and dynamic price calculation for various items.</p>
+            <p><strong>Technologies:</strong> Python, Input Handling, Logical Programming</p>
+            <a href="https://github.com/Kch56/Checkout-System.git" class="project-button">View Code</a>
+        </div>
+
+
+        
+        <div class="project-card">
+            <h2>Courtney's Creation Website</h2>
+            <p>A website created to showcase Courtney's creative projects and services. It features a visually appealing layout, with sections dedicated to portfolio items, a contact form, and an intuitive user interface.</p>
+            <p><strong>Technologies:</strong> Canva, Web Design, Responsive Layout</p>
+            <a href="https://docs.google.com/document/d/1m-GAew002UdSGLTYtw0Z8nrsLkVnAxUNop-TQR2a730/edit?usp=sharing" class="project-button">View Project</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

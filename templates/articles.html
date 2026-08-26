@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Articles - Kyle Hampton{% endblock %}
+{% block content %}
+<section class="articles-page">
+  <div class="articles-header"><h1>Articles &amp; Features</h1><p>Stories about my journey, public-service work, and growth in data and technology.</p></div>
+  <div class="article-carousel" aria-roledescription="carousel" aria-label="Articles featuring Kyle Hampton">
+    <article class="article-slide active"><p class="article-source">City of Charlotte · July 8, 2026</p><h2>A Young Data Analyst Helps Charlotte Fire Solve the Puzzle</h2><p>The City of Charlotte follows my path from a student internship to using data, mapping, and technology to support Charlotte Fire and Innovation &amp; Technology.</p><a class="project-button" href="https://www.charlottenc.gov/City-News/A-young-data-analyst-helps-Charlotte-Fire-solve-the-puzzle" target="_blank" rel="noopener">Read the City feature</a></article>
+    <article class="article-slide"><p class="article-source">The Charlotte Observer · 2026</p><h2>‘More than talented.’ 14 CMS students turn internships into full-time city jobs</h2><p>The Observer covered the City of Charlotte Education 2 Employment signing class and my transition into a full-time municipal technology role.</p><a class="project-button" href="https://www.charlotteobserver.com/news/local/education/article316430759.html" target="_blank" rel="noopener">Read the Observer article</a></article>
+    <article class="article-slide"><p class="article-source">The Queen City Scoop · 2026</p><h2>How a 19-Year-Old UNC Charlotte Student Is Helping Charlotte Fire</h2><p>A local feature about using data analysis, mapping, and technology to help Charlotte Fire understand emergency response and plan for a growing city.</p><a class="project-button" href="https://thequeencityscoop.com/a/unc-charlotte-student-charlotte-fire-data-analyst" target="_blank" rel="noopener">Read the Queen City Scoop article</a></article>
+    <div class="carousel-controls"><button type="button" class="carousel-button prev" aria-label="Previous article">←</button><div class="carousel-dots" aria-label="Choose an article"></div><button type="button" class="carousel-button next" aria-label="Next article">→</button></div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script>
+const slides=[...document.querySelectorAll('.article-slide')],dots=document.querySelector('.carousel-dots');let current=0;
+function show(i){current=(i+slides.length)%slides.length;slides.forEach((s,n)=>s.classList.toggle('active',n===current));[...dots.children].forEach((d,n)=>d.classList.toggle('active',n===current));}
+slides.forEach((_,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Show article '+(i+1));b.addEventListener('click',()=>show(i));dots.appendChild(b);});
+document.querySelector('.prev').addEventListener('click',()=>show(current-1));document.querySelector('.next').addEventListener('click',()=>show(current+1));show(0);
+</script>{% endblock %}
+

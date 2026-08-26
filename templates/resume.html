@@ -1,6 +1,144 @@
-{% extends 'base.html' %}{% block title %}Résumé | Kyle Hampton{% endblock %}{% block content %}<section class="page-hero shell resume-hero"><div><p class="eyebrow">Résumé</p><h1>Kyle Hampton</h1><p>Data analyst and developer working at the intersection of public service, enterprise data, GIS, and software.</p></div><a class="button secondary" href="mailto:kylehampton949@gmail.com">Request PDF copy</a></section><section class="section shell resume-layout"><div class="resume-main"><section><h2>Experience</h2>
-<div class="resume-item"><h3>Innovation & Technology, City of Charlotte</h3><p class="meta">Technology professional · 2026 to present</p><ul><li>Build and support applications, data workflows, and integrations used by City teams.</li><li>Develop Python and SQL processes that connect Snowflake data with downstream reporting and operational systems.</li><li>Partner with users to troubleshoot applications, document processes, and translate business needs into practical solutions.</li><li>Continue supporting Charlotte Fire’s planning and analytics work.</li></ul></div>
-<div class="resume-item"><h3>Charlotte Fire Department</h3><p class="meta">Data Analytics Intern · 2025 to 2026</p><ul><li>Applied analytics, GIS, and software development to planning and public-safety questions.</li><li>Built tools for response analysis, mapping, data quality, and repeatable reporting.</li><li>Cleaned and reconciled information across systems while documenting assumptions and exceptions.</li></ul></div>
-<div class="resume-item"><h3>Charlotte-Mecklenburg Police Department</h3><p class="meta">Mayor’s Youth Employment Program Intern · Summer 2024</p><ul><li>Improved data-capture and work-log processes used by the Community Services Division.</li><li>Supported National Night Out and public-facing safety programming.</li></ul></div>
-<div class="resume-item"><h3>Raytheon Technologies</h3><p class="meta">Engineering Intern · Summer 2023</p><ul><li>Researched and presented a solar sidewalk concept using technical design and 3D modeling.</li></ul></div></section><section><h2>Selected work</h2><div class="resume-item"><h3>Enterprise data workflows</h3><p>Created Python-based Snowflake extraction and transfer processes with schema inspection, batching, data-type preservation, and result validation.</p></div><div class="resume-item"><h3>Spatial response analysis</h3><p>Developed a GIS-centered model that turns historical movement into understandable coverage and planning information.</p></div><div class="resume-item"><h3>Operational web applications</h3><p>Built and supported Flask tools that organize information, support review workflows, and make map-based records easier to use.</p></div></section></div>
-<aside class="resume-side"><section><h2>Education</h2><h3>UNC Charlotte</h3><p>B.S. Data Science<br>Expected 2027</p><p>Studies in artificial intelligence and information systems</p></section><section><h2>Technical skills</h2><div class="chip-list"><span>Python</span><span>SQL</span><span>Snowflake</span><span>Flask</span><span>ArcGIS</span><span>Excel</span><span>Power BI</span><span>Tableau</span><span>HTML/CSS</span><span>Git</span><span>APIs</span><span>Data validation</span></div></section><section><h2>Contact</h2><p>Charlotte, NC<br><a href="mailto:kylehampton949@gmail.com">kylehampton949@gmail.com</a><br><a href="https://www.linkedin.com/in/kyle-c-hampton/" target="_blank" rel="noopener">LinkedIn</a></p></section></aside></section>{% endblock %}
+{% extends 'base.html' %}
+
+{% block title %}Resume - Kyle Hampton{% endblock %}
+
+{% block content %}
+<section class="resume-page">
+  <div class="resume-header">
+    <h1>Kyle Hampton</h1>
+    <p>
+      <a href="mailto:kylehampton949@gmail.com">kylehampton949@gmail.com</a> |
+      704.615.2524 |
+      Charlotte, NC |
+      <a href="https://www.linkedin.com/in/kyle-c-hampton" target="_blank" rel="noopener">www.linkedin.com/in/kyle-c-hampton</a>
+    </p>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="resume-section">
+    <h2>EDUCATION</h2>
+    <div class="interactive-box">
+      <ul>
+        <li><strong>University of North Carolina at Charlotte</strong> — Expected Graduation: Fall 2027</li>
+        <li>Bachelor of Science in Data Science, Minor in Management Information Systems &amp; AI</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WORK EXPERIENCE -->
+  <div class="resume-section">
+    <h2>WORK EXPERIENCE</h2>
+
+    <div class="interactive-box">
+      <h3>City of Charlotte Innovation &amp; Technology - Data &amp; Technology Professional</h3>
+      <p><em>2026 - Present</em></p>
+      <ul>
+        <li>Support Snowflake data workflows, including data preparation, validation, documentation, and analytics.</li>
+        <li>Help build repeatable processes that make trusted data easier for teams to use.</li>
+        <li>Collaborate across technical and operational groups while protecting sensitive organizational information.</li>
+      </ul>
+    </div>
+
+    <div class="interactive-box">
+      <h3>Charlotte Fire Department - Data Analytics Intern</h3>
+      <p><em>June 2025 - 2026</em></p>
+      <ul>
+        <li>Design web tools for tracking, document handling, and internal communication.</li>
+        <li>Collaborate with planning staff to identify inefficiencies and deliver tech solutions.</li>
+        <li>Support development of an AI-powered assistant to analyze historical department data.</li>
+        <li>Analyze operational data to identify patterns and support planning improvements.</li>
+        <li>Use GIS data in planning tools that support geographic analysis and informed decisions.</li>
+      </ul>
+    </div>
+
+    <div class="interactive-box">
+      <h3>Charlotte Mecklenburg Police Department - Data Analytics Intern</h3>
+      <p><em>June 2024 - August 2024</em></p>
+      <ul>
+        <li>Led transformation of CMPD’s Night Watch data system, improving efficiency and organization by 56%.</li>
+        <li>Redesigned employee work log system, enhancing data accuracy and reporting efficiency.</li>
+        <li>Reorganized previous spreadsheets, improving data structure for easier viewing and information access.</li>
+        <li>Assisted with active shooter prevention presentations to the public.</li>
+      </ul>
+    </div>
+
+    <div class="interactive-box">
+      <h3>Raytheon Technologies - Engineering Intern</h3>
+      <p><em>June 2023 - August 2023</em></p>
+      <ul>
+        <li>Spearheaded a solar panel sidewalk project, contributing to blueprint creation and 3D modeling.</li>
+        <li>Engaged with company members to gain insights into diverse careers and skills.</li>
+        <li>Conducted extensive research for the final solar panel sidewalk project.</li>
+      </ul>
+    </div>
+
+    <!-- KEEP YMCA (per your request) -->
+    <div class="interactive-box">
+      <h3>YMCA - Deck Manager / Swim Instructor</h3>
+      <p><em>June 2023 - Present</em></p>
+      <ul>
+        <li>Conduct swimming lessons for individuals of varying skill levels.</li>
+        <li>Maintain a safe and positive learning environment for all participants.</li>
+        <li>Handle customer service and provide information to participants as needed.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="resume-section">
+    <h2>PROJECTS</h2>
+
+    <div class="interactive-box">
+      <h3>Cash Compass - Personal Finance Web Application</h3>
+      <p><em>July 2024 - Present</em></p>
+      <ul>
+        <li><strong>Lead Developer:</strong> Spearheaded the development of a financial management website using Flask, overseeing the integration of backend functionalities and frontend templates.</li>
+        <li><strong>Competitor Analysis &amp; UX Design:</strong> Led the research and analysis of competing financial tools to identify flaws and implement user-friendly features, enhancing the overall user experience.</li>
+        <li><strong>Portfolio Lead:</strong> Oversaw project documentation and presentations, ensuring clear communication of progress to stakeholders and team members.</li>
+      </ul>
+    </div>
+
+    <div class="interactive-box">
+      <h3>CFD Response Model – Charlotte Fire Department</h3>
+      <p><em>November 2025 - Present</em></p>
+      <ul>
+        <li>Developed a spatial model to study response coverage and travel patterns.</li>
+        <li>Prepared and validated data used in GIS-based planning analysis.</li>
+        <li>Created clear visual outputs that support review and discussion.</li>
+      </ul>
+    </div>
+
+    <div class="interactive-box">
+      <h3>CFD Grant Finders - Grant Research Tool</h3>
+      <p><em>December 2025 - Present</em></p>
+      <ul>
+        <li>Developed a research tool that helps teams identify and organize relevant funding opportunities.</li>
+        <li>Designed search, filtering, and summary features to make early review faster.</li>
+        <li>Documented the application so future updates can be made consistently.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- LEADERSHIP & ACTIVITIES (from your brag-sheet items) -->
+  <div class="resume-section">
+    <h2>LEADERSHIP &amp; ACTIVITIES</h2>
+    <div class="interactive-box">
+      <ul>
+        <li><strong>School Ambassador</strong> — Represented the school to prospective students/families and supported events and outreach.</li>
+        <li><strong>CEETEC Ambassador</strong> — Promoted engineering/technical programs through events and student engagement.</li>
+        <li><strong>Computer Science Teacher Assistant</strong> — Assisted instruction, supported peers with debugging, and helped with class activities (AP Computer Science / CS course support).</li>
+        <li><strong>Active Shooter Safety Training Support</strong> — Helped deliver public-facing preparedness training sessions.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="resume-section">
+    <h2>SKILLS</h2>
+    <div class="interactive-box">
+      <p>Python, Flask, SQL, Snowflake, Data Integration, Excel, Microsoft Office Suite, HTML/CSS, Java, Tableau, Power BI, 3D Modeling</p>
+      <p>Canva, UI/UX, API Integration</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

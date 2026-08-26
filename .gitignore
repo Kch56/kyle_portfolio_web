@@ -1,6 +1,6 @@
 __pycache__/
 *.py[cod]
 .env
-data/*.db
+data/
+*.db
 .venv/
-

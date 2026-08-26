@@ -3,9 +3,31 @@
 {% block content %}
 <section class="projects-page">
   <div class="projects-header"><h1>Research &amp; Strategy</h1><p>Research that supports my work in data, GIS, technology planning, and public service. Operational details are intentionally kept general.</p></div>
-  <div class="projects-grid">
-    <div class="project-card"><h2>Using Esri GeoAI for Risk Intelligence</h2><p>A research brief on how spatial analytics and responsible AI concepts can support planning, monitoring, and clearer decisions.</p><ul><li>Spatial analysis and pattern discovery</li><li>Data preparation and validation</li><li>Responsible use, transparency, and human review</li></ul><button class="project-button" type="button" onclick="togglePdf('esri-reader')">View Full PDF Here</button><div id="esri-reader" class="pdf-reader" hidden><iframe title="Esri GeoAI research document" src="{{ url_for('static', filename='esri.pdf') }}"></iframe></div></div>
-    <div class="project-card"><h2>Fire Department Technology Research</h2><p>A research overview covering analytics, GIS, automation, decision tools, and practical approaches to technology adoption.</p><ul><li>Improving access to useful information</li><li>Reducing repetitive work through automation</li><li>Supporting phased, sustainable implementation</li></ul><button class="project-button" type="button" onclick="togglePdf('tech-reader')">View Full PDF Here</button><div id="tech-reader" class="pdf-reader" hidden><iframe title="Fire department technology research document" src="{{ url_for('static', filename='rea.pdf') }}"></iframe></div></div>
+
+  <div class="research-section-heading"><span>Primary work</span><h2>Featured Research</h2><p>These are my two main research studies. Each complete document can be read without leaving the portfolio.</p></div>
+  <div class="featured-research-grid">
+    <article class="project-card featured-research-card">
+      <div class="featured-label">Featured Study 01</div>
+      <h2>Using Esri GeoAI for the Charlotte Risk Intelligence Dashboard</h2>
+      <p>A research brief examining how spatial analytics and responsible AI concepts can strengthen risk intelligence, planning, and decision support.</p>
+      <h3>Research focus</h3>
+      <ul><li>GeoAI and spatial pattern discovery</li><li>Predictive analysis and scenario planning</li><li>Data preparation, validation, and transparency</li><li>Responsible use and human review</li></ul>
+      <button class="project-button" type="button" onclick="togglePdf('esri-reader', this)">Read Full Research PDF</button>
+      <div id="esri-reader" class="pdf-reader" hidden><iframe title="Esri GeoAI research document" src="{{ url_for('static', filename='esri.pdf') }}"></iframe></div>
+    </article>
+    <article class="project-card featured-research-card">
+      <div class="featured-label">Featured Study 02</div>
+      <h2>Fire Department Technology Research</h2>
+      <p>A research overview of analytics, GIS, automation, decision tools, and practical approaches to adopting technology in public service.</p>
+      <h3>Research focus</h3>
+      <ul><li>Data and GIS for situational awareness</li><li>Automation for repetitive workflows</li><li>Dashboards and clearer reporting standards</li><li>Phased implementation and funding feasibility</li></ul>
+      <button class="project-button" type="button" onclick="togglePdf('tech-reader', this)">Read Full Research PDF</button>
+      <div id="tech-reader" class="pdf-reader" hidden><iframe title="Fire department technology research document" src="{{ url_for('static', filename='rea.pdf') }}"></iframe></div>
+    </article>
+  </div>
+
+  <div class="research-section-heading secondary"><span>Supporting work</span><h2>Additional Research Areas</h2><p>Other subjects that shape how I build, test, and explain data-driven tools.</p></div>
+  <div class="projects-grid research-topics-grid">
     <div class="project-card"><h2>Response Coverage &amp; Travel-Time Analysis</h2><p>Studying how GIS and historical information can support realistic, explainable planning.</p></div>
     <div class="project-card"><h2>Risk Classification &amp; Governance</h2><p>Exploring transparent classifications, validation, documentation, and human review for decision-support tools.</p></div>
     <div class="project-card"><h2>Automation &amp; Repeatable Reporting</h2><p>Researching ways to make recurring maps, reports, and data checks more consistent and easier to maintain.</p></div>
@@ -13,5 +35,4 @@
   </div>
 </section>
 {% endblock %}
-{% block scripts %}<script>function togglePdf(id){const reader=document.getElementById(id);reader.hidden=!reader.hidden;if(!reader.hidden)reader.scrollIntoView({behavior:'smooth',block:'center'});}</script>{% endblock %}
-
+{% block scripts %}<script>function togglePdf(id,button){const reader=document.getElementById(id);reader.hidden=!reader.hidden;button.textContent=reader.hidden?'Read Full Research PDF':'Close Research PDF';button.setAttribute('aria-expanded',String(!reader.hidden));if(!reader.hidden)reader.scrollIntoView({behavior:'smooth',block:'center'});}</script>{% endblock %}

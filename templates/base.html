@@ -15,10 +15,10 @@
             <div class="navbar-brand">
                 <a href="/">Kyle Hampton</a>
             </div>
-            <button class="navbar-toggler" type="button" onclick="toggleNavbar()">
+            <button class="navbar-toggler" type="button" onclick="toggleNavbar()" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
                 &#9776;
             </button>
-            <ul class="navbar-menu">
+            <ul class="navbar-menu" id="primary-navigation">
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
 
@@ -59,8 +59,15 @@
 <script>
     function toggleNavbar() {
         const navbarMenu = document.querySelector('.navbar-menu');
+        const navbarButton = document.querySelector('.navbar-toggler');
         navbarMenu.classList.toggle('show');
+        navbarButton.setAttribute('aria-expanded', navbarMenu.classList.contains('show'));
     }
+
+    document.querySelectorAll('.navbar-menu a').forEach(link => link.addEventListener('click', () => {
+        document.querySelector('.navbar-menu').classList.remove('show');
+        document.querySelector('.navbar-toggler').setAttribute('aria-expanded', 'false');
+    }));
 </script>
 {% block scripts %}{% endblock %}
 </body>

@@ -16,4 +16,27 @@
     </div>
 </section>
 
+<section class="home-articles">
+    <div class="home-articles-heading">
+        <p class="article-source">In the news</p>
+        <h2>Featured Stories</h2>
+        <p>Coverage of my path from student internships to data and technology work with the City of Charlotte.</p>
+    </div>
+    <div class="article-preview-grid">
+        <a class="article-preview-card" href="https://www.charlottenc.gov/City-News/A-young-data-analyst-helps-Charlotte-Fire-solve-the-puzzle" target="_blank" rel="noopener">
+            <img src="https://www.charlottenc.gov/files/sharedassets/city/v/1/public-safety/fire/images/kyle-hampton_hq-lobby.jpg" alt="Kyle Hampton at Charlotte Fire headquarters">
+            <div><span>City of Charlotte</span><h3>A Young Data Analyst Helps Charlotte Fire Solve the Puzzle</h3><p>My journey into public service through data, code, and GIS.</p></div>
+        </a>
+        <a class="article-preview-card" href="https://www.charlotteobserver.com/news/local/education/article316430759.html" target="_blank" rel="noopener">
+            <img src="https://www.charlottenc.gov/files/sharedassets/city/v/1/public-safety/fire/images/kyle-hampton_signing.jpg" alt="Kyle Hampton at the City of Charlotte signing event">
+            <div><span>The Charlotte Observer</span><h3>CMS Students Turn Internships Into Full-Time City Jobs</h3><p>A feature on the Education 2 Employment signing class.</p></div>
+        </a>
+        <a class="article-preview-card" href="https://thequeencityscoop.com/a/unc-charlotte-student-charlotte-fire-data-analyst" target="_blank" rel="noopener">
+            <img src="https://news-letter.s3.wasabisys.com/images/ef5386e7-9bf5-44a6-b9df-1fca6ad2e6fc.png" alt="Queen City Scoop feature about Kyle Hampton">
+            <div><span>The Queen City Scoop</span><h3>How a 19-Year-Old UNCC Student Is Helping Charlotte Fire</h3><p>A local look at the people and purpose behind the data.</p></div>
+        </a>
+    </div>
+    <a href="{{ url_for('articles') }}" class="cta-button home-articles-button">View All Articles</a>
+</section>
+
 {% endblock %}

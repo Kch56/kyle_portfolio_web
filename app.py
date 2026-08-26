@@ -118,7 +118,7 @@ def projects():
 
 @app.route("/current-projects")
 def current_projects():
-    return redirect(url_for("projects"), code=301)
+    return render_template("current_projects.html")
 
 
 @app.route("/research")
@@ -126,9 +126,10 @@ def research():
     return render_template("research.html")
 
 
+@app.route("/articles")
 @app.route("/press")
-def press():
-    return render_template("press.html")
+def articles():
+    return render_template("articles.html")
 
 
 @app.route("/resume")

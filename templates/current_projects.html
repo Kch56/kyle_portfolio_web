@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Current & Recent Projects - Kyle Hampton{% endblock %}
+{% block content %}
+<section class="projects-page">
+  <div class="projects-header">
+    <h1>Current &amp; Recent Projects</h1>
+    <p>Work across public-sector analytics, GIS, application development, and data integration. Descriptions stay intentionally general to protect internal data and processes.</p>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card"><h2>Emergency Response Modeling</h2><p>Developing spatial analysis tools that help teams study response coverage, travel patterns, and planning scenarios.</p><p><strong>Technologies:</strong> Python, GIS, Spatial Analysis, Data Preparation</p></div>
+    <div class="project-card"><h2>Risk-Informed Planning</h2><p>Exploring clear, explainable ways to combine location-based information with operational planning and human review.</p><p><strong>Technologies:</strong> GIS, Data Architecture, Process Design</p></div>
+    <div class="project-card"><h2>Grant Research Tool</h2><p>Building a tool that helps teams search, organize, and review funding opportunities more efficiently.</p><p><strong>Technologies:</strong> Flask, Python, Search, UI/UX</p></div>
+    <div class="project-card"><h2>Mapbook Automation</h2><p>Creating repeatable workflows for producing consistent maps and planning materials as source data changes.</p><p><strong>Technologies:</strong> Python, GIS, Automation, Documentation</p></div>
+    <div class="project-card"><h2>Internal Request Routing</h2><p>Designing a simpler way for staff to find the right process, resource, or team for common internal requests.</p><p><strong>Technologies:</strong> Workflow Design, Application Development, UI/UX</p></div>
+    <div class="project-card"><h2>Department Mobile App Concept</h2><p>Planning a mobile-friendly resource hub that brings guidance, references, and common workflows into one place.</p><p><strong>Technologies:</strong> Product Design, Mobile UX, Internal Tools</p></div>
+    <div class="project-card"><h2>Snowflake Data Integration &amp; Analytics</h2><p>Supporting reliable data workflows so teams can use consistent information for reporting, analysis, and decision-making.</p><p><strong>General Focus:</strong></p><ul><li>Preparing and validating data for analytics</li><li>Supporting repeatable pipelines and quality checks</li><li>Documenting datasets and business definitions</li><li>Collaborating with technical and operational teams</li></ul><p><strong>Technologies:</strong> Snowflake, SQL, Python, Data Integration</p></div>
+  </div>
+  <div class="more-projects-cta"><div class="more-projects-content"><h2>Want to see earlier work?</h2><p>My past projects page includes student, internship, and application-development work.</p><a href="{{ url_for('projects') }}" class="secondary-cta">View Past Projects</a></div></div>
+</section>
+{% endblock %}
+

@@ -1,1 +1,4 @@
-{% extends 'base.html' %}{% block title %}Blog Admin | Kyle Hampton{% endblock %}{% block content %}<section class="section shell narrow"><form class="card form" method="post"><p class="eyebrow">Private area</p><h1>Blog login</h1><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label>Password<input type="password" name="password" required autocomplete="current-password"></label><button class="button primary" type="submit">Log in</button></form></section>{% endblock %}
+{% extends 'base.html' %}
+{% block title %}Blog Login - Kyle Hampton{% endblock %}
+{% block content %}<section class="admin-page"><form class="admin-form" method="post"><h1>Blog Login</h1><p>This area is private.</p><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label>Password<input type="password" name="password" required autocomplete="current-password"></label><button class="project-button" type="submit">Log in</button></form></section>{% endblock %}
+

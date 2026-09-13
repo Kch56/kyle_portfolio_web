@@ -655,6 +655,195 @@ footer span {
     margin-bottom: 10px;
 }
 
+.featured-current-project {
+    width: min(1180px, 100%);
+    margin: 0 auto 60px;
+    padding: clamp(24px, 4vw, 44px);
+    color: white;
+    background: rgba(0, 0, 0, 0.72);
+    border: 2px solid rgba(255, 215, 0, 0.7);
+    border-radius: 18px;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+}
+
+.featured-current-project-heading {
+    max-width: 900px;
+    margin-bottom: 30px;
+}
+
+.featured-project-label,
+.current-projects-heading span {
+    display: inline-block;
+    color: #ffd700;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.featured-current-project h2 {
+    margin: 10px 0 12px;
+    color: #ffd700;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.12;
+}
+
+.featured-project-intro {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.65;
+}
+
+.featured-project-layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.5fr);
+    gap: 30px;
+}
+
+.featured-project-question {
+    align-self: start;
+    padding: 24px;
+    background: rgba(255, 215, 0, 0.12);
+    border-left: 4px solid #ffd700;
+    border-radius: 8px;
+}
+
+.featured-project-question span {
+    color: #ffd700;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.featured-project-question p {
+    margin: 12px 0 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.featured-project-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.featured-project-details h3 {
+    margin: 0 0 8px;
+    color: #ffd700;
+    font-size: 1.1rem;
+}
+
+.featured-project-details p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.featured-project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.featured-project-button { margin-top: 25px; }
+
+.current-project-detail {
+    min-height: 100vh;
+    padding: 60px 20px 80px;
+    color: white;
+    background: linear-gradient(-45deg, #34a853, #4285f4, #fbbc05, #ea4335);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+.project-detail-shell {
+    width: min(1050px, 100%);
+    margin: 0 auto;
+    padding: clamp(25px, 5vw, 55px);
+    background: rgba(0, 0, 0, 0.74);
+    border-radius: 18px;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+}
+
+.project-detail-back {
+    display: inline-block;
+    margin-bottom: 28px;
+    color: #ffd700;
+    font-weight: 700;
+}
+
+.project-detail-back:hover { text-decoration: underline; }
+
+.project-detail-status {
+    display: block;
+    width: fit-content;
+    margin-bottom: 12px;
+    padding: 6px 12px;
+    color: #111;
+    background: #ffd700;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.project-detail-shell h1 {
+    margin: 0 0 15px;
+    color: #ffd700;
+    font-size: clamp(2.2rem, 5vw, 3.7rem);
+    line-height: 1.1;
+}
+
+.project-detail-lead {
+    max-width: 800px;
+    margin: 0 0 42px;
+    font-size: 1.18rem;
+    line-height: 1.7;
+}
+
+.project-detail-section { margin-top: 32px; }
+.project-detail-section h2 { margin-bottom: 10px; color: #ffd700; }
+.project-detail-section p { margin: 0; line-height: 1.75; }
+
+.project-detail-question {
+    margin-top: 32px;
+    padding: 24px;
+    background: rgba(255, 215, 0, 0.12);
+    border-left: 4px solid #ffd700;
+    border-radius: 8px;
+}
+
+.project-detail-question span {
+    color: #ffd700;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.project-detail-question p { margin: 10px 0 0; font-size: 1.05rem; line-height: 1.7; }
+.project-detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 35px; }
+
+.featured-project-tools span {
+    padding: 7px 13px;
+    color: #111;
+    background: #ffd700;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.current-projects-heading {
+    margin: 0 auto 24px;
+    text-align: center;
+    color: white;
+}
+
+.current-projects-heading h2 {
+    margin: 8px 0 0;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+}
+
 .project-button {
     display: inline-block;
     background-color: #ffd700;
@@ -677,6 +866,11 @@ footer span {
     .projects-header p { font-size: 1rem; }
     .project-card h2 { font-size: 1.2rem; }
     .project-card p { font-size: 0.9rem; }
+    .featured-project-layout,
+    .featured-project-details,
+    .project-detail-grid { grid-template-columns: 1fr; }
+    .featured-current-project { margin-bottom: 45px; }
+    .featured-project-question { padding: 19px; }
 }
 
 

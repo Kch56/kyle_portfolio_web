@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}{{ project.title }} - Kyle Hampton{% endblock %}
+{% block content %}
+<article class="current-project-detail">
+  <div class="project-detail-shell">
+    <a class="project-detail-back" href="{{ url_for('current_projects') }}">&larr; Back to Current Projects</a>
+    <span class="project-detail-status">{{ project.status }}</span>
+    <h1>{{ project.title }}</h1>
+    <p class="project-detail-lead">{{ project.summary }}</p>
+
+    <section class="project-detail-section">
+      <h2>Project Overview</h2>
+      <p>{{ project.overview }}</p>
+    </section>
+
+    <section class="project-detail-question">
+      <span>Guiding Question</span>
+      <p>{{ project.question }}</p>
+    </section>
+
+    <div class="project-detail-grid">
+      <section class="project-detail-section">
+        <h2>My Contribution</h2>
+        <p>{{ project.contribution }}</p>
+      </section>
+      <section class="project-detail-section">
+        <h2>Purpose and Value</h2>
+        <p>{{ project.impact }}</p>
+      </section>
+    </div>
+
+    <section class="project-detail-section">
+      <h2>Tools and Methods</h2>
+      <div class="featured-project-tools">
+        {% for tool in project.tools %}<span>{{ tool }}</span>{% endfor %}
+      </div>
+    </section>
+  </div>
+</article>
+{% endblock %}

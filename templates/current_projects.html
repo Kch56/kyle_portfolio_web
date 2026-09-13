@@ -6,16 +6,59 @@
     <h1>Current &amp; Recent Projects</h1>
     <p>Work across public-sector analytics, GIS, application development, and data integration. Descriptions stay intentionally general to protect internal data and processes.</p>
   </div>
+
+  <section class="featured-current-project" aria-labelledby="charlotte-displacement-title">
+    <div class="featured-current-project-heading">
+      <span class="featured-project-label">Featured Data Science Project · In Progress</span>
+      <h2 id="charlotte-displacement-title">Mapping Charlotte's Changing Neighborhoods</h2>
+      <p class="featured-project-intro">A data science study of displacement risk and gentrification across Charlotte neighborhoods.</p>
+    </div>
+
+    <div class="featured-project-layout">
+      <div class="featured-project-question">
+        <span>Research question</span>
+        <p>What housing, demographic, and economic factors are most strongly associated with displacement risk in Charlotte neighborhoods, and to what extent can changes in affordable housing, income, and housing costs identify communities experiencing gentrification?</p>
+      </div>
+
+      <div class="featured-project-details">
+        <div>
+          <h3>What I am studying</h3>
+          <p>I am bringing together neighborhood-level housing, demographic, and economic data to examine how rent, income, property values, development, and affordable housing availability change over time.</p>
+        </div>
+        <div>
+          <h3>Planned analysis</h3>
+          <p>The project will compare trends across Charlotte neighborhoods, identify relationships between key variables, and explore whether those changes can help flag communities facing greater displacement pressure.</p>
+        </div>
+        <div>
+          <h3>Data sources</h3>
+          <p>Planned sources include the City of Charlotte Open Data Portal, the U.S. Census Bureau's American Community Survey, and other public housing and economic datasets.</p>
+        </div>
+        <div>
+          <h3>Visualizations in progress</h3>
+          <p>Planned visuals include an interactive neighborhood risk map and comparison charts showing how housing costs, income, affordable housing, and development patterns have changed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-project-tools" aria-label="Project tools and methods">
+      <span>Python</span><span>Pandas</span><span>GeoPandas</span><span>GIS</span><span>Data Visualization</span><span>Statistical Analysis</span>
+    </div>
+    <a class="project-button featured-project-button" href="{{ url_for('current_project_detail', slug='charlotte-neighborhood-change') }}">View Project Details</a>
+  </section>
+
+  <div class="current-projects-heading">
+    <span>More Current Work</span>
+    <h2>Additional projects and areas of focus</h2>
+  </div>
   <div class="projects-grid">
-    <div class="project-card"><h2>Emergency Response Modeling</h2><p>Developing spatial analysis tools that help teams study response coverage, travel patterns, and planning scenarios.</p><p><strong>Technologies:</strong> Python, GIS, Spatial Analysis, Data Preparation</p></div>
-    <div class="project-card"><h2>Risk-Informed Planning</h2><p>Exploring clear, explainable ways to combine location-based information with operational planning and human review.</p><p><strong>Technologies:</strong> GIS, Data Architecture, Process Design</p></div>
-    <div class="project-card"><h2>Grant Research Tool</h2><p>Building a tool that helps teams search, organize, and review funding opportunities more efficiently.</p><p><strong>Technologies:</strong> Flask, Python, Search, UI/UX</p></div>
-    <div class="project-card"><h2>Mapbook Automation</h2><p>Creating repeatable workflows for producing consistent maps and planning materials as source data changes.</p><p><strong>Technologies:</strong> Python, GIS, Automation, Documentation</p></div>
-    <div class="project-card"><h2>Internal Request Routing</h2><p>Designing a simpler way for staff to find the right process, resource, or team for common internal requests.</p><p><strong>Technologies:</strong> Workflow Design, Application Development, UI/UX</p></div>
-    <div class="project-card"><h2>Department Mobile App Concept</h2><p>Planning a mobile-friendly resource hub that brings guidance, references, and common workflows into one place.</p><p><strong>Technologies:</strong> Product Design, Mobile UX, Internal Tools</p></div>
-    <div class="project-card"><h2>Snowflake Data Integration &amp; Analytics</h2><p>Supporting reliable data workflows so teams can use consistent information for reporting, analysis, and decision-making.</p><p><strong>General Focus:</strong></p><ul><li>Preparing and validating data for analytics</li><li>Supporting repeatable pipelines and quality checks</li><li>Documenting datasets and business definitions</li><li>Collaborating with technical and operational teams</li></ul><p><strong>Technologies:</strong> Snowflake, SQL, Python, Data Integration</p></div>
+    <article class="project-card"><h2>Emergency Response Modeling</h2><p>Developing spatial analysis tools that help teams study response coverage, travel patterns, and planning scenarios.</p><p><strong>Technologies:</strong> Python, GIS, Spatial Analysis, Data Preparation</p><a class="project-button" href="{{ url_for('current_project_detail', slug='emergency-response-modeling') }}">View Details</a></article>
+    <article class="project-card"><h2>Risk-Informed Planning</h2><p>Exploring clear, explainable ways to combine location-based information with operational planning and human review.</p><p><strong>Technologies:</strong> GIS, Data Architecture, Process Design</p><a class="project-button" href="{{ url_for('current_project_detail', slug='risk-informed-planning') }}">View Details</a></article>
+    <article class="project-card"><h2>Grant Research Tool</h2><p>Building a tool that helps teams search, organize, and review funding opportunities more efficiently.</p><p><strong>Technologies:</strong> Flask, Python, Search, UI/UX</p><a class="project-button" href="{{ url_for('current_project_detail', slug='grant-research-tool') }}">View Details</a></article>
+    <article class="project-card"><h2>Mapbook Automation</h2><p>Creating repeatable workflows for producing consistent maps and planning materials as source data changes.</p><p><strong>Technologies:</strong> Python, GIS, Automation, Documentation</p><a class="project-button" href="{{ url_for('current_project_detail', slug='mapbook-automation') }}">View Details</a></article>
+    <article class="project-card"><h2>Internal Request Routing</h2><p>Designing a simpler way for staff to find the right process, resource, or team for common internal requests.</p><p><strong>Technologies:</strong> Workflow Design, Application Development, UI/UX</p><a class="project-button" href="{{ url_for('current_project_detail', slug='internal-request-routing') }}">View Details</a></article>
+    <article class="project-card"><h2>Department Mobile App Concept</h2><p>Planning a mobile-friendly resource hub that brings guidance, references, and common workflows into one place.</p><p><strong>Technologies:</strong> Product Design, Mobile UX, Internal Tools</p><a class="project-button" href="{{ url_for('current_project_detail', slug='department-mobile-app') }}">View Details</a></article>
+    <article class="project-card"><h2>Snowflake Data Integration &amp; Analytics</h2><p>Supporting reliable data workflows so teams can use consistent information for reporting, analysis, and decision-making.</p><p><strong>General Focus:</strong></p><ul><li>Preparing and validating data for analytics</li><li>Supporting repeatable pipelines and quality checks</li><li>Documenting datasets and business definitions</li><li>Collaborating with technical and operational teams</li></ul><p><strong>Technologies:</strong> Snowflake, SQL, Python, Data Integration</p><a class="project-button" href="{{ url_for('current_project_detail', slug='snowflake-data-integration') }}">View Details</a></article>
   </div>
   <div class="more-projects-cta"><div class="more-projects-content"><h2>Want to see earlier work?</h2><p>My past projects page includes student, internship, and application-development work.</p><a href="{{ url_for('projects') }}" class="secondary-cta">View Past Projects</a></div></div>
 </section>
 {% endblock %}
-

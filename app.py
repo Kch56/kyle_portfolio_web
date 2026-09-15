@@ -32,7 +32,7 @@ mail = Mail(app)
 
 CURRENT_PROJECTS = {
     "charlotte-neighborhood-change": {
-        "title": "Mapping Charlotte's Changing Neighborhoods",
+        "title": "Under Pressure: Housing Affordability and Displacement Vulnerability",
         "status": "Completed",
         "summary": "An exploratory data science study of housing affordability pressure and displacement vulnerability across Mecklenburg County census tracts and Charlotte neighborhoods.",
         "overview": "This project began with a broad question about displacement risk and gentrification. After reviewing the available data, I narrowed the analysis to outcomes the datasets could support: characteristics associated with rent burden across Mecklenburg County census tracts and a separate description of the City of Charlotte's displacement-vulnerability classification. Keeping those analyses separate prevented the project from treating a constructed vulnerability score as proof that displacement occurred.",
@@ -41,6 +41,7 @@ CURRENT_PROJECTS = {
         "contribution": "I collected public data through the U.S. Census Bureau and City of Charlotte APIs, cleaned and merged tract-level measurements, handled missing observations, explored housing and demographic variables, and created visualizations to compare affordability patterns. I also documented the limits of the analysis so associations would not be presented as causal findings.",
         "impact": "The question remains relevant to residents, housing organizations, and local planners because affordability pressure may leave households less able to absorb a rent increase or income loss. The analysis identifies patterns worth investigating, but it does not estimate a household's probability of displacement or identify neighborhoods that have gentrified.",
         "tools": ["Python", "Pandas", "Census API", "ArcGIS REST API", "Data Visualization", "Statistical Analysis"],
+        "repository_url": "https://github.com/Kch56/Under-Pressure-Housing-Affordability-and-Displacement-Vulnerability/tree/main",
         "data_notes": [
             "The ACS figures summarize estimates collected across 2020–2024, not measurements from one moment in 2024. The July 2025 label in the Housing Locational Tool identifies a snapshot and does not confirm that every underlying City measure was observed in 2025.",
             "Census tracts and Neighborhood Profile Areas are different geographic units. Census tables were joined by state, county, and tract codes, while City tables were joined by NPA identifiers. I analyzed the two geographies separately and did not directly merge NPAs with census tracts. Mecklenburg County also includes places outside Charlotte's municipal limits.",

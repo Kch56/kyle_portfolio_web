@@ -47,6 +47,11 @@ CURRENT_PROJECTS = {
             "Census tracts and Neighborhood Profile Areas are different geographic units. Census tables were joined by state, county, and tract codes, while City tables were joined by NPA identifiers. I analyzed the two geographies separately and did not directly merge NPAs with census tracts. Mecklenburg County also includes places outside Charlotte's municipal limits.",
             "The merged ACS data contained 305 tract records. The final comparison used 296 tracts after excluding nine records missing a required measurement.",
         ],
+        "cleaning_notes": [
+            "I converted Census fields into usable numeric values and treated negative placeholder codes as missing instead of real incomes, rents, or counts. This let me keep the other valid measurements from a tract rather than removing the entire record. City percentage fields were cleaned by removing percent symbols, while legitimate zero counts were preserved.",
+            "Rent burden was calculated from ACS table B25070 after removing households whose burden could not be computed. I combined the categories spending 30% or more of income on rent and used checks that prevented incomplete counts or invalid denominators from producing misleading percentages.",
+            "I required one-to-one identifier matches so duplicate records would cause an error instead of silently multiplying rows. The City API was downloaded in pages, and fields with unclear or implausible values, including the available sales-price summaries, were excluded from the conclusions. The final correlation comparison used the same 296 complete tracts for every characteristic.",
+        ],
         "definitions": [
             {
                 "concept": "Rent burden",

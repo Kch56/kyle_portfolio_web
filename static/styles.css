@@ -838,6 +838,8 @@ footer span {
 .project-source-table td:first-child { width: 34%; font-weight: 600; }
 .project-source-table a { color: #ffd700; text-decoration: underline; text-underline-offset: 3px; }
 .project-methods p + p { margin-top: 14px; }
+.project-cleaning { padding: 26px; background: rgba(255, 255, 255, 0.08); border-left: 4px solid #ffd700; border-radius: 10px; }
+.project-cleaning p + p { margin-top: 14px; }
 .project-definition-table td:first-child { width: 20%; }
 .project-definition-table td:last-child { width: 19%; }
 .project-section-kicker,

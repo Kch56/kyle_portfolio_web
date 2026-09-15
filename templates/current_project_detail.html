@@ -13,6 +13,14 @@
       <p>{{ project.overview }}</p>
     </section>
 
+    {% if project.original_question %}
+    <section class="project-detail-section project-original-question">
+      <h2>Original Research Question</h2>
+      <p>{{ project.original_question }}</p>
+      <p class="scope-note">The scope was refined after evaluating what the available data could measure responsibly.</p>
+    </section>
+    {% endif %}
+
     <section class="project-detail-question">
       <span>Guiding Question</span>
       <p>{{ project.question }}</p>
@@ -35,6 +43,25 @@
         {% for tool in project.tools %}<span>{{ tool }}</span>{% endfor %}
       </div>
     </section>
+
+    {% if project.sources %}
+    <section class="project-detail-section project-sources">
+      <h2>Data Sources</h2>
+      <div class="project-source-table-wrap">
+        <table class="project-source-table">
+          <thead><tr><th>Source</th><th>Role in the Analysis</th></tr></thead>
+          <tbody>
+            {% for source in project.sources %}
+            <tr>
+              <td><a href="{{ source.url }}" target="_blank" rel="noopener">{{ source.name }}</a></td>
+              <td>{{ source.role }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+    {% endif %}
   </div>
 </article>
 {% endblock %}

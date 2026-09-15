@@ -33,13 +33,31 @@ mail = Mail(app)
 CURRENT_PROJECTS = {
     "charlotte-neighborhood-change": {
         "title": "Mapping Charlotte's Changing Neighborhoods",
-        "status": "In Progress",
-        "summary": "A data science study of displacement risk and gentrification across Charlotte neighborhoods.",
-        "overview": "This independent research project examines how housing, demographic, and economic conditions are changing across Charlotte. The goal is to identify patterns connected with displacement pressure while showing that neighborhood change is more complex than any single number.",
-        "question": "What housing, demographic, and economic factors are most strongly associated with displacement risk in Charlotte neighborhoods, and to what extent can changes in affordable housing, income, and housing costs identify communities experiencing gentrification?",
-        "contribution": "I am selecting public datasets, preparing neighborhood-level variables, comparing changes over time, and designing visualizations that make the results easier to interpret. As the project develops, I plan to test relationships among rent, income, home values, development activity, and affordable housing availability.",
-        "impact": "The finished study will help explain where change is occurring, which factors tend to appear together, and where additional community-focused research may be needed. It is an analytical study, not a tool for labeling individual residents or predicting what will happen to a specific household.",
-        "tools": ["Python", "Pandas", "GeoPandas", "GIS", "Data Visualization", "Statistical Analysis"],
+        "status": "Completed",
+        "summary": "An exploratory data science study of housing affordability pressure and displacement vulnerability across Mecklenburg County census tracts and Charlotte neighborhoods.",
+        "overview": "This project began with a broad question about displacement risk and gentrification. After reviewing the available data, I narrowed the analysis to outcomes the datasets could support: characteristics associated with rent burden across Mecklenburg County census tracts and a separate description of the City of Charlotte's displacement-vulnerability classification. Keeping those analyses separate prevented the project from treating a constructed vulnerability score as proof that displacement occurred.",
+        "original_question": "What housing, demographic, and economic factors are most strongly associated with displacement risk in Charlotte neighborhoods, and to what extent can changes in affordable housing, income, and housing costs identify communities experiencing gentrification?",
+        "question": "Which housing, demographic, and economic characteristics are associated with rent burden across Mecklenburg County census tracts, and how do separate city data describe neighborhood displacement vulnerability?",
+        "contribution": "I collected public data through the U.S. Census Bureau and City of Charlotte APIs, cleaned and merged tract-level measurements, handled missing observations, explored housing and demographic variables, and created visualizations to compare affordability patterns. I also documented the limits of the analysis so associations would not be presented as causal findings.",
+        "impact": "The question remains relevant to residents, housing organizations, and local planners because affordability pressure may leave households less able to absorb a rent increase or income loss. The analysis identifies patterns worth investigating, but it does not estimate a household's probability of displacement or identify neighborhoods that have gentrified.",
+        "tools": ["Python", "Pandas", "Census API", "ArcGIS REST API", "Data Visualization", "Statistical Analysis"],
+        "sources": [
+            {
+                "name": "U.S. Census Bureau, 2024 ACS Five-Year API",
+                "url": "https://api.census.gov/data/2024/acs/acs5.html",
+                "role": "Provided 2020–2024 estimates of income, rent, population, rent burden, employment, education, racial and ethnic composition, and housing tenure.",
+            },
+            {
+                "name": "City of Charlotte, Vulnerability to Displacement by NPA",
+                "url": "https://gis.charlottenc.gov/arcgis/rest/services/ODP/City_Space_ODP_Data/MapServer/1",
+                "role": "Provided the City vulnerability score and classification, along with poverty, homeownership, education, age, and demographic fields.",
+            },
+            {
+                "name": "City of Charlotte, Housing Locational Tool",
+                "url": "https://gis.charlottenc.gov/arcgis/rest/services/HNS/NPA_HLT/FeatureServer/0",
+                "role": "Provided July 2025 neighborhood income for a separate NPA comparison. Sales-price fields were investigated but not used for conclusions.",
+            },
+        ],
     },
     "emergency-response-modeling": {
         "title": "Emergency Response Modeling",

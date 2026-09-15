@@ -37,6 +37,69 @@
       </section>
     </div>
 
+    {% if project.data_notes %}
+    <section class="project-detail-section project-methods">
+      <h2>Data and Methods</h2>
+      {% for note in project.data_notes %}<p>{{ note }}</p>{% endfor %}
+    </section>
+    {% endif %}
+
+    {% if project.definitions %}
+    <section class="project-detail-section">
+      <h2>How the Study Measures Each Concept</h2>
+      <div class="project-source-table-wrap">
+        <table class="project-source-table project-definition-table">
+          <thead><tr><th>Concept</th><th>Definition</th><th>Source</th></tr></thead>
+          <tbody>
+            {% for item in project.definitions %}
+            <tr>
+              <td>{{ item.concept }}</td>
+              <td>{{ item.definition }}</td>
+              <td><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.source }}</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+    {% endif %}
+
+    {% if project.findings %}
+    <section class="project-detail-section project-findings">
+      <span class="project-section-kicker">Visualizations and Findings</span>
+      <h2>What the Analysis Shows</h2>
+      <div class="finding-list">
+        {% for finding in project.findings %}
+        <article class="finding-card">
+          <div class="finding-copy">
+            <span class="finding-number">Finding {{ loop.index }}</span>
+            <h3>{{ finding.title }}</h3>
+            <p>{{ finding.body }}</p>
+          </div>
+          {% if finding.image %}
+          <figure>
+            <a href="{{ url_for('static', filename=finding.image) }}" target="_blank" rel="noopener" aria-label="Open Figure {{ loop.index }} at full size">
+              <img src="{{ url_for('static', filename=finding.image) }}" alt="{{ finding.alt }}" loading="lazy">
+            </a>
+            <figcaption>{{ finding.caption }}</figcaption>
+          </figure>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if project.limitations %}
+    <section class="project-detail-section project-limitations">
+      <h2>Limitations and Next Steps</h2>
+      <p class="limitations-intro">The results are useful for finding patterns, but they need to be read with care.</p>
+      <ul>
+        {% for limitation in project.limitations %}<li>{{ limitation }}</li>{% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
     <section class="project-detail-section">
       <h2>Tools and Methods</h2>
       <div class="featured-project-tools">

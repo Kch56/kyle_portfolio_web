@@ -823,6 +823,15 @@ footer span {
 
 .project-detail-question p { margin: 10px 0 0; font-size: 1.05rem; line-height: 1.7; }
 .project-detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 35px; }
+.project-original-question { padding-bottom: 8px; }
+.project-original-question .scope-note { margin-top: 12px; color: #ffd700; font-size: 0.92rem; }
+.project-source-table-wrap { overflow-x: auto; border-radius: 10px; }
+.project-source-table { width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.07); }
+.project-source-table th,
+.project-source-table td { padding: 16px; border: 1px solid rgba(255, 255, 255, 0.2); text-align: left; vertical-align: top; line-height: 1.6; }
+.project-source-table th { color: #111; background: #ffd700; }
+.project-source-table td:first-child { width: 34%; font-weight: 600; }
+.project-source-table a { color: #ffd700; text-decoration: underline; text-underline-offset: 3px; }
 
 .featured-project-tools span {
     padding: 7px 13px;

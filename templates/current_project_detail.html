@@ -47,6 +47,13 @@
     </section>
     {% endif %}
 
+    {% if project.cleaning_notes %}
+    <section class="project-detail-section project-cleaning">
+      <h2>Data Cleaning and Validation</h2>
+      {% for note in project.cleaning_notes %}<p>{{ note }}</p>{% endfor %}
+    </section>
+    {% endif %}
+
     {% if project.definitions %}
     <section class="project-detail-section">
       <h2>How the Study Measures Each Concept</h2>

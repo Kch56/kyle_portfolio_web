@@ -7,6 +7,9 @@
     <span class="project-detail-status">{{ project.status }}</span>
     <h1>{{ project.title }}</h1>
     <p class="project-detail-lead">{{ project.summary }}</p>
+    {% if project.repository_url %}
+    <a class="project-button project-code-button project-detail-code" href="{{ project.repository_url }}" target="_blank" rel="noopener">View Code on GitHub</a>
+    {% endif %}
 
     <section class="project-detail-section">
       <h2>Project Overview</h2>

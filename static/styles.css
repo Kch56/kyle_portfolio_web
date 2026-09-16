@@ -518,6 +518,33 @@ footer span {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+.resume-download-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.resume-download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    color: #111;
+    background: #ffd700;
+    border-radius: 999px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.resume-download-button:hover {
+    color: #111;
+    background: #ffc107;
+    transform: translateY(-2px);
+    box-shadow: 0 9px 20px rgba(0, 0, 0, 0.3);
+}
+
 .resume-section {
     margin-bottom: 40px;
     background: rgba(0, 0, 0, 0.6);

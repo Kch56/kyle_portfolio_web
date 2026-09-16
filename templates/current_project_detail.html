@@ -29,6 +29,14 @@
       <p>{{ project.question }}</p>
     </section>
 
+    {% if project.final_finding %}
+    <section class="project-final-finding">
+      <span>Final Finding</span>
+      <h2>Main Takeaway</h2>
+      <p>{{ project.final_finding }}</p>
+    </section>
+    {% endif %}
+
     <div class="project-detail-grid">
       <section class="project-detail-section">
         <h2>My Contribution</h2>

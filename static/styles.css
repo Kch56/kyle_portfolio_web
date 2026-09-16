@@ -828,6 +828,10 @@ footer span {
 
 .project-detail-question p { margin: 10px 0 0; font-size: 1.05rem; line-height: 1.7; }
 .project-detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 35px; }
+.project-final-finding { margin-top: 28px; padding: 28px; color: #111; background: #ffd700; border-radius: 12px; box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25); }
+.project-final-finding span { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.project-final-finding h2 { margin: 6px 0 10px; color: #111; }
+.project-final-finding p { margin: 0; color: #111; font-size: 1.05rem; line-height: 1.72; }
 .project-original-question { padding-bottom: 8px; }
 .project-original-question .scope-note { margin-top: 12px; color: #ffd700; font-size: 0.92rem; }
 .project-source-table-wrap { overflow-x: auto; border-radius: 10px; }

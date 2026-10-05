@@ -49,6 +49,53 @@
     </div>
   </section>
 
+  <section class="featured-current-project crash-forecast-project" aria-labelledby="charlotte-crash-title">
+    <div class="featured-current-project-heading">
+      <span class="featured-project-label">Featured Data Science Project · Completed</span>
+      <h2 id="charlotte-crash-title">Where Will Charlotte Crashes Cluster Next Month?</h2>
+      <p class="featured-project-intro">A machine-learning study that forecasts monthly reported crash counts across 500-meter grid cells and identifies areas that may deserve closer transportation-safety review.</p>
+    </div>
+
+    <div class="featured-project-layout">
+      <div class="featured-project-question">
+        <span>Research Question</span>
+        <p>Can past crash patterns predict which 500-meter areas of Charlotte will have higher reported crash counts next month, and do separate morning and afternoon forecasts improve the hotspot picture?</p>
+      </div>
+
+      <div class="featured-project-details">
+        <div>
+          <h3>Approach</h3>
+          <p>I prepared spatial and time-based features, used chronological training, validation, and test periods, and compared two machine-learning models against a simple baseline.</p>
+        </div>
+        <div>
+          <h3>All-day results</h3>
+          <p>The top 5% of predicted grid cells captured 1,604 of 3,864 reported December crashes, or 41.5% of the total.</p>
+        </div>
+        <div>
+          <h3>Time-of-day extension</h3>
+          <p>The morning model captured 38.4% of reported crashes, while the afternoon model captured 42.6% within each period's top-ranked cells.</p>
+        </div>
+        <div>
+          <h3>Responsible use</h3>
+          <p>The forecasts rank areas for further review. They do not predict individual crashes or replace engineering analysis, field observations, or community knowledge.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="crash-project-metrics" aria-label="Crash forecasting project results">
+      <div><strong>41.5%</strong><span>All-day crashes captured</span></div>
+      <div><strong>38.4%</strong><span>Morning crashes captured</span></div>
+      <div><strong>42.6%</strong><span>Afternoon crashes captured</span></div>
+    </div>
+    <div class="featured-project-tools" aria-label="Project tools and methods">
+      <span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>Spatial Analysis</span><span>Time-based Validation</span><span>Data Visualization</span>
+    </div>
+    <div class="featured-project-actions">
+      <a class="project-button featured-project-button" href="{{ url_for('static', filename='projects/charlotte-crash-hotspots/charlotte_crash_hotspots.html') }}">View Full Case Study</a>
+      <a class="project-button project-code-button" href="https://github.com/Kch56/Where-Will-Charlotte-Crashes-Cluster-Next-Month-" target="_blank" rel="noopener">View Code on GitHub</a>
+    </div>
+  </section>
+
   <div class="current-projects-heading">
     <span>More Current Work</span>
     <h2>Additional projects and areas of focus</h2>

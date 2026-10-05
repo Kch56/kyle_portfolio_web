@@ -778,6 +778,24 @@ footer span {
 .project-code-button { background: #fff; color: #111; }
 .project-code-button:hover { background: #e9eef5; }
 .project-detail-code { margin: -18px 0 14px; }
+.crash-forecast-project { border-color: rgba(66, 133, 244, 0.9); }
+.crash-project-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 30px;
+}
+.crash-project-metrics div {
+    padding: 18px;
+    text-align: center;
+    background: rgba(66, 133, 244, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 10px;
+}
+.crash-project-metrics strong,
+.crash-project-metrics span { display: block; }
+.crash-project-metrics strong { color: #ffd700; font-size: 1.65rem; }
+.crash-project-metrics span { margin-top: 5px; font-size: 0.85rem; line-height: 1.35; }
 
 .current-project-detail {
     min-height: 100vh;
@@ -938,6 +956,7 @@ footer span {
     .project-detail-grid { grid-template-columns: 1fr; }
     .featured-current-project { margin-bottom: 45px; }
     .featured-project-question { padding: 19px; }
+    .crash-project-metrics { grid-template-columns: 1fr; }
     .project-source-table th,
     .project-source-table td { min-width: 180px; padding: 13px; }
     .finding-copy { padding: 20px; }

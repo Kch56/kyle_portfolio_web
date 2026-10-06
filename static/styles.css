@@ -962,6 +962,9 @@ footer span {
 .project-limitations ul { margin: 0; padding-left: 21px; }
 .project-limitations li { margin-bottom: 12px; line-height: 1.65; }
 .project-limitations li:last-child { margin-bottom: 0; }
+.apa-note { margin-bottom: 18px !important; opacity: 0.88; }
+.apa-citation { padding-left: 2.1rem !important; text-indent: -2.1rem; line-height: 1.65; }
+.apa-citation a { overflow-wrap: anywhere; }
 
 .featured-project-tools span {
     padding: 7px 13px;

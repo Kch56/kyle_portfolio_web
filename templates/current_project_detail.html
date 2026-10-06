@@ -156,14 +156,18 @@
 
     {% if project.sources %}
     <section class="project-detail-section project-sources">
-      <h2>Data Sources</h2>
+      <h2>References</h2>
+      <p class="apa-note">References are formatted in APA style. The second column explains how each source contributed to the project.</p>
       <div class="project-source-table-wrap">
         <table class="project-source-table">
-          <thead><tr><th>Source</th><th>Role in the Analysis</th></tr></thead>
+          <thead><tr><th>APA Citation</th><th>Role in the Analysis</th></tr></thead>
           <tbody>
             {% for source in project.sources %}
             <tr>
-              <td><a href="{{ source.url }}" target="_blank" rel="noopener">{{ source.name }}</a></td>
+              <td class="apa-citation">
+                {{ source.author }} ({{ source.date }}). <em>{{ source.title }}</em>{% if source.descriptor %} {{ source.descriptor }}{% endif %}.{% if source.publisher %} {{ source.publisher }}.{% endif %}
+                <a href="{{ source.url }}" target="_blank" rel="noopener">{{ source.url }}</a>
+              </td>
               <td>{{ source.role }}</td>
             </tr>
             {% endfor %}

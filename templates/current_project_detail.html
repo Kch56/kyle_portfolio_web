@@ -4,7 +4,7 @@
 <article class="current-project-detail">
   <div class="project-detail-shell">
     <a class="project-detail-back" href="{{ url_for('current_projects') }}">&larr; Back to Current Projects</a>
-    <span class="project-detail-status">{{ project.status }}</span>
+    <span class="project-detail-status">{{ project.status }}{% if project.date %} · {{ project.date }}{% endif %}</span>
     <h1>{{ project.title }}</h1>
     <p class="project-detail-lead">{{ project.summary }}</p>
     {% if project.repository_url %}

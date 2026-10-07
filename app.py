@@ -34,6 +34,7 @@ CURRENT_PROJECTS = {
     "charlotte-neighborhood-change": {
         "title": "Under Pressure: Housing Affordability and Displacement Vulnerability",
         "status": "Completed",
+        "date": "September 2026",
         "summary": "An exploratory data science study of housing affordability pressure and displacement vulnerability across Mecklenburg County census tracts and Charlotte neighborhoods.",
         "overview": "This project began with a broad question about displacement risk and gentrification. After reviewing the available data, I narrowed the analysis to outcomes the datasets could support: characteristics associated with rent burden across Mecklenburg County census tracts and a separate description of the City of Charlotte's displacement-vulnerability classification. Keeping those analyses separate prevented the project from treating a constructed vulnerability score as proof that displacement occurred.",
         "original_question": "What housing, demographic, and economic factors are most strongly associated with displacement risk in Charlotte neighborhoods, and to what extent can changes in affordable housing, income, and housing costs identify communities experiencing gentrification?",
@@ -198,6 +199,7 @@ CURRENT_PROJECTS = {
     "charlotte-crash-forecasting": {
         "title": "Where Will Charlotte Crashes Cluster Next Month?",
         "status": "Completed",
+        "date": "October 2026",
         "summary": "A machine-learning study that forecasts monthly reported crash counts across 500-meter Charlotte grid cells and identifies areas that may deserve closer transportation-safety review.",
         "overview": "Reported crashes are not distributed evenly across Charlotte. This project tests whether recent crash history can help identify the small set of areas likely to contain a larger share of next month's reported crashes. Each prediction is a count for one 500-meter grid cell and one calendar month. The cells are then ranked to support closer review. The model does not predict the exact location or time of an individual crash.",
         "question": "Can past crash patterns predict which 500-meter areas of Charlotte will have higher reported crash counts next month, and do separate morning and afternoon forecasts improve the hotspot picture?",
